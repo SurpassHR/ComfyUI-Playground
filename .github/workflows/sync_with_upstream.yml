@@ -1,8 +1,8 @@
 name: Sync With Upstream
 on:
-  schedule:
-    - cron: '0 0/12 * * *' # sync twice every day at noon and midnight
   workflow_dispatch:
+  schedule:
+    - cron: '0 0/4 * * *' # sync twice every day at noon and midnight, due to UTC timezone convertion, minus 8
 
 jobs:
   sync:
@@ -17,6 +17,11 @@ jobs:
         run: |
           git remote add upstream ${{ secrets.UPSTREAM_URL }}
           git fetch upstream
+
+      - name: Config Git Info
+        run: |
+          git config user.name SurpassHR
+          git config user.email hu.rui0530@gmail.com
 
       - name: Merge Changes
         run: |
