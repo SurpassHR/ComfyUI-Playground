@@ -1,6 +1,7 @@
+@REM ComfyUI launching script for Windows
 @echo off
 
-set PYTHON=F:\Codes\ComfyUI\.venv\Scripts\python.exe
+set PYTHON=.venv\Scripts\python.exe
 %PYTHON% main.py ^
 --port 55555 ^
 --cuda-malloc ^
