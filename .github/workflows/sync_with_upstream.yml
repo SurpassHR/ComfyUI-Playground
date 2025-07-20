@@ -2,7 +2,7 @@ name: Sync With Upstream
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0/4 * * *' # sync twice every day at noon and midnight, due to UTC timezone convertion, minus 8
+    - cron: '0 16/12 * * *' # sync twice every day at noon and midnight, due to UTC timezone convertion, minus 8
 
 jobs:
   sync:
