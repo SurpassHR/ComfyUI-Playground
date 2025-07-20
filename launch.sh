@@ -6,6 +6,5 @@ ${PYTHON} main.py \
 --cuda-malloc \
 --preview-method taesd \
 --use-sage-attention \
---reserve-vram 0.5 \
 --async-offload \
 --fast
