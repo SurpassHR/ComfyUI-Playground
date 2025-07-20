@@ -158,8 +158,6 @@ pip \
 
 apt install ffmpeg
 
-conda install conda-forge::sqlite conda-forge:libsqlite -y
-
 # 云服务器存储空间有限，清除 pip 的缓存
 pip cache purge
 
