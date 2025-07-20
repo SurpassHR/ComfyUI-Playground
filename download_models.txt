@@ -12,6 +12,14 @@ https://civitai.com/api/download/models/1379960?type=Model&format=SafeTensor&siz
   dir=diffusion_models/illustrious
   out=Prefect-illustrious-XL-10.safetensors
 
+https://civitai.com/api/download/models/1761560?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=b682afe60e7e69974b6064abca140e8c
+  dir=diffusion_models/illustrious
+  out=WAI-NSFW-illustrious-SDXL.safetensors
+
+https://civitai.com/api/download/models/1575331?type=Model&format=SafeTensor&size=full&fp=fp16&token=b682afe60e7e69974b6064abca140e8c
+  dir=diffusion_models/illustrious
+  out=ILustREAL-illustrious-XL.safetensors
+
 # VAE
 
 # https://hf-mirror.com/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
