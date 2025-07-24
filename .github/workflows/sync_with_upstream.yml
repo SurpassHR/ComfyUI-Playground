@@ -9,29 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # get full commit history
-
-      - name: Add Upstream
+      - name: Sync upstream changes
         run: |
-          git remote add upstream ${{ secrets.UPSTREAM_URL }}
-          git fetch upstream
-
-      - name: Config Git Info
-        run: |
+          git clone https://${{ secrets.ACTION_TOKEN }}@github.com/${{ github.repository }}.git tmp
+          cd tmp
           git config user.name SurpassHR
           git config user.email hu.rui0530@gmail.com
-
-      - name: Merge Changes
-        run: |
-          git checkout master
-          git merge upstream/master --no-edit || echo "Nothing to merge"
-
-      - name: Push Changes
-        run: |
-          git remote set-url origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}.git
-          git remote -v
+          git remote add upstream https://${{ secrets.ACTION_TOKEN }}@github.com/comfyanonymous/ComfyUI.git
+          git fetch upstream
+          git merge upstream/master
           git push origin master
+
+      # - name: Push Changes
+      #   run: git push https://github.com/${{ github.repository }}.git HEAD:master
