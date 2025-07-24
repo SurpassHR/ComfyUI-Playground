@@ -28,5 +28,10 @@ jobs:
       - name: Merge Changes
         run: |
           git checkout master
-          git merge upstream/master --no-edit
-          git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git master
+          git merge upstream/master --no-edit || echo "Nothing to merge"
+
+      - name: Push Changes
+        run: |
+          git remote set-url origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}.git
+          git remote -v
+          git push origin master
