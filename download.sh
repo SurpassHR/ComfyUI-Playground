@@ -154,7 +154,8 @@ pip \
     xatlas \
     beautifulsoup4 \
     langchain_community \
-    langchain_openai
+    langchain_openai \
+    custom_rasterizer
 
 apt install ffmpeg
 
