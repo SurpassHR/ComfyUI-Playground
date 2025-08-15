@@ -19,7 +19,8 @@ if "%params%"=="" (
     --preview-method taesd ^
     --use-sage-attention ^
     --async-offload ^
-    --fast
+    --reserve-vram 1.2 ^
+    --fast ^
 ) else (
     %PYTHON% main.py ^
     --port 55555 ^
@@ -27,6 +28,7 @@ if "%params%"=="" (
     --preview-method taesd ^
     --use-sage-attention ^
     --async-offload ^
+    --reserve-vram 1.2 ^
     --fast ^
     %params%
 )

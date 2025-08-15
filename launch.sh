@@ -12,7 +12,7 @@ else
     params="$@"
 fi
 
-PYTHON=".venv/bin/python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/python.exe
+PYTHON="python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/python.exe
 
 if [ -z "$params" ]; then
     "$PYTHON" main.py \
