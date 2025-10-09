@@ -16,19 +16,21 @@ PYTHON="python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/py
 
 if [ -z "$params" ]; then
     "$PYTHON" main.py \
-        --port 55555 \
+        --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
         --use-sage-attention \
         --async-offload \
+        --disable-xformers \
         --fast
 else
     "$PYTHON" main.py \
-        --port 55555 \
+        --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
         --use-sage-attention \
         --async-offload \
-        --fast \
+        --disable-xformers \
+        --fast
         $params
 fi
