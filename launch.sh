@@ -22,7 +22,12 @@ if [ -z "$params" ]; then
         --use-sage-attention \
         --async-offload \
         --disable-xformers \
-        --fast
+        --fast fp16_accumulation \
+        --fp16-unet \
+        --fp16-vae \
+        --fp16-text-enc \
+        --cache-lru 12 \
+        --normalvram
 else
     "$PYTHON" main.py \
         --port 55554 \
@@ -31,6 +36,11 @@ else
         --use-sage-attention \
         --async-offload \
         --disable-xformers \
-        --fast
-        $params
+        --fast fp16_accumulation \
+        --fp16-unet \
+        --fp16-vae \
+        --fp16-text-enc \
+        --cache-lru 12 \
+        --normalvram \
+        "$@"
 fi

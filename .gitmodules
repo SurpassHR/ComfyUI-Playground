@@ -1,0 +1,72 @@
+[submodule "cg-use-everywhere"]
+	path = custom_nodes/cg-use-everywhere
+	url = https://github.com/chrisgoringe/cg-use-everywhere.git
+[submodule "ComfyLiterals"]
+	path = custom_nodes/ComfyLiterals
+	url = https://github.com/M1kep/ComfyLiterals.git
+[submodule "ComfyUI-Crystools"]
+	path = custom_nodes/ComfyUI-Crystools
+	url = https://github.com/crystian/ComfyUI-Crystools.git
+[submodule "comfyui-easy-use"]
+	path = custom_nodes/comfyui-easy-use
+	url = https://github.com/yolain/ComfyUI-Easy-Use.git
+[submodule "comfyui-frame-interpolation"]
+	path = custom_nodes/comfyui-frame-interpolation
+	url = https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
+[submodule "ComfyUI-GGUF"]
+	path = custom_nodes/ComfyUI-GGUF
+	url = https://github.com/city96/ComfyUI-GGUF.git
+[submodule "comfyui-impact-pack"]
+	path = custom_nodes/comfyui-impact-pack
+	url = https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
+[submodule "comfyui-kjnodes"]
+	path = custom_nodes/comfyui-kjnodes
+	url = https://github.com/kijai/ComfyUI-KJNodes.git
+[submodule "ComfyUI-Manager"]
+	path = custom_nodes/ComfyUI-Manager
+	url = https://github.com/Comfy-Org/ComfyUI-Manager.git
+[submodule "ComfyUI-MultiGPU"]
+	path = custom_nodes/ComfyUI-MultiGPU
+	url = https://github.com/pollockjj/ComfyUI-MultiGPU.git
+[submodule "ComfyUI-Show-Clock-in-CMD-Console-SG"]
+	path = custom_nodes/ComfyUI-Show-Clock-in-CMD-Console-SG
+	url = https://github.com/ShammiG/ComfyUI-Show-Clock-in-CMD-Console-SG.git
+[submodule "comfyui-utils-nodes"]
+	path = custom_nodes/comfyui-utils-nodes
+	url = https://github.com/zhangp365/ComfyUI-utils-nodes.git
+[submodule "comfyui-various"]
+	path = custom_nodes/comfyui-various
+	url = https://github.com/jamesWalker55/comfyui-various.git
+[submodule "comfyui-videohelpersuite"]
+	path = custom_nodes/comfyui-videohelpersuite
+	url = https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
+[submodule "ComfyUI-WanVideoWrapper"]
+	path = custom_nodes/ComfyUI-WanVideoWrapper
+	url = https://github.com/kijai/ComfyUI-WanVideoWrapper.git
+[submodule "ComfyUI_Comfyroll_CustomNodes"]
+	path = custom_nodes/ComfyUI_Comfyroll_CustomNodes
+	url = https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
+[submodule "comfyui_essentials"]
+	path = custom_nodes/comfyui_essentials
+	url = https://github.com/cubiq/ComfyUI_essentials.git
+[submodule "ComfyUI_LayerStyle"]
+	path = custom_nodes/ComfyUI_LayerStyle
+	url = https://github.com/chflame163/ComfyUI_LayerStyle.git
+[submodule "comfyui_ultimatesdupscale"]
+	path = custom_nodes/comfyui_ultimatesdupscale
+	url = https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
+[submodule "RES4LYF"]
+	path = custom_nodes/RES4LYF
+	url = https://github.com/ClownsharkBatwing/RES4LYF.git
+[submodule "rgthree-comfy"]
+	path = custom_nodes/rgthree-comfy
+	url = https://github.com/rgthree/rgthree-comfy.git
+[submodule "TT-tools"]
+	path = custom_nodes/TT-tools
+	url = https://github.com/liangtongt/TT-tools.git
+[submodule "was-ns"]
+	path = custom_nodes/was-ns
+	url = https://github.com/ltdrdata/was-node-suite-comfyui.git
+[submodule "ComfyUI-Custom-Scripts"]
+    path = custom_nodes/ComfyUI-Custom-Scripts
+    url = https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
