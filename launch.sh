@@ -13,15 +13,13 @@ else
 fi
 
 PYTHON="python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/python.exe
-
 if [ -z "$params" ]; then
-    "$PYTHON" main.py \
+    TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" main.py \
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
         --use-sage-attention \
         --async-offload \
-        --disable-xformers \
         --fast fp16_accumulation \
         --fp16-unet \
         --fp16-vae \
@@ -29,7 +27,7 @@ if [ -z "$params" ]; then
         --cache-lru 12 \
         --normalvram
 else
-    "$PYTHON" main.py \
+    TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" main.py \
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
