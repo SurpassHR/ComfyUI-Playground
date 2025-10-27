@@ -14,7 +14,7 @@ fi
 
 PYTHON="python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/python.exe
 if [ -z "$params" ]; then
-    TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" main.py \
+    "$PYTHON" main.py \
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
@@ -24,8 +24,7 @@ if [ -z "$params" ]; then
         --fp16-unet \
         --fp16-vae \
         --fp16-text-enc \
-        --cache-lru 12 \
-        --normalvram
+        --cache-lru 12
 else
     TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" main.py \
         --port 55554 \
