@@ -1,0 +1,5158 @@
+{
+  "id": "91f6bbe2-ed41-4fd6-bac7-71d5b5864ecb",
+  "revision": 0,
+  "last_node_id": 198,
+  "last_link_id": 411,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        390,
+        230
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 349
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 404
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            134,
+            149,
+            236,
+            409
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Photorealistic upper body headshot of a 20-year-old Chinese girl with long, straight black hair and hazel eyes, looking directly at the camera with a neutral, emotionless expression. She is facing the camera squarely, wearing a simple white t-shirt against a plain beige wall background. ccd. IMG_1234.PNG"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        400,
+        440
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            135,
+            150,
+            212
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "色调过于艳丽，过曝，细节模糊不清，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，杂乱的背景，三条腿，水印，混乱的手指。"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        2780,
+        -190
+      ],
+      "size": [
+        213.20000305175782,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 52,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 330
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            155,
+            380
+          ]
+        }
+      ],
+      "title": "VAE Decode (1st samppler)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 37,
+      "type": "UNETLoader",
+      "pos": [
+        20,
+        50
+      ],
+      "size": [
+        330,
+        90
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            181,
+            234,
+            293,
+            303,
+            334
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "qwen_image_fp8_e4m3fn.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "whiteQWEN_alpha01.safetensors",
+        "fp8_e5m2"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "CLIPLoader",
+      "pos": [
+        20,
+        190
+      ],
+      "size": [
+        330,
+        110
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            75,
+            143,
+            182,
+            301,
+            333,
+            349,
+            356,
+            357
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+        "qwen_image",
+        "default"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "VAELoader",
+      "pos": [
+        20,
+        340
+      ],
+      "size": [
+        330,
+        60
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            76,
+            151,
+            161,
+            214,
+            252,
+            342,
+            382
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "qwen_image_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "qwen_image_vae.safetensors"
+      ]
+    },
+    {
+      "id": 58,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        50,
+        500
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 363
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 364
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            136
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "EmptySD3LatentImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        768,
+        1536,
+        1
+      ]
+    },
+    {
+      "id": 60,
+      "type": "SaveImage",
+      "pos": [
+        6690,
+        -670
+      ],
+      "size": [
+        540,
+        640
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 353
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "SaveImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Qwen\\%date:yyyy-MM-dd%\\whiteQwen"
+      ]
+    },
+    {
+      "id": 66,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        2410,
+        -190
+      ],
+      "size": [
+        230,
+        58
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 144
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            133
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        2.2
+      ]
+    },
+    {
+      "id": 67,
+      "type": "MarkdownNote",
+      "pos": [
+        -540,
+        10
+      ],
+      "size": [
+        540,
+        630
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Model links",
+      "properties": {
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "[Tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) | [教程](https://docs.comfy.org/zh-CN/tutorials/image/qwen/qwen-image)\n\n\n## Model links\n\nYou can find all the models on [Huggingface](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/tree/main) or [Modelscope](https://modelscope.cn/models/Comfy-Org/Qwen-Image_ComfyUI/files)\n\n**Diffusion model**\n\n- [qwen_image_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors)\n\nQwen_image_distill\n\n- [qwen_image_distill_full_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/non_official/diffusion_models/qwen_image_distill_full_fp8_e4m3fn.safetensors)\n- [qwen_image_distill_full_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/non_official/diffusion_models/qwen_image_distill_full_bf16.safetensors)\n\n**LoRA**\n\n- [Qwen-Image-Lightning-8steps-V1.0.safetensors](https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.0.safetensors)\n\n**Text encoder**\n\n- [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors)\n\n**VAE**\n\n- [qwen_image_vae.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors)\n\nModel Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_fp8_e4m3fn.safetensors\n│   │   └── qwen_image_distill_full_fp8_e4m3fn.safetensors\n│   ├── 📂 loras/\n│   │   └── Qwen-Image-Lightning-8steps-V1.0.safetensors\n│   ├── 📂 vae/\n│   │   └── qwen_image_vae.safetensors\n│   └── 📂 text_encoders/\n│       └── qwen_2.5_vl_7b_fp8_scaled.safetensors\n```\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 69,
+      "type": "MarkdownNote",
+      "pos": [
+        -540,
+        -220
+      ],
+      "size": [
+        390,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "VRAM Usage",
+      "properties": {
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "## GPU:RTX4090D 24GB\n\n| Configuration            | VRAM Usage | 1st Generation | 2nd Generation |\n|---------------------|---------------|---------------|-----------------|\n| Fp8_e4m3fn             | 86%                | ≈ 94s               | ≈ 71s                   |\n| With 8steps LoRA    | 86%                | ≈ 55s               | ≈ 34s                  |\n| Distill fp8_e4m3fn   | 86%                | ≈ 69s               | ≈ 36s                  |"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 70,
+      "type": "Note",
+      "pos": [
+        850,
+        910
+      ],
+      "size": [
+        310,
+        120
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "For fp8 without 8steps LoRA",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Set cfg to 1.0 for a speed boost at the cost of consistency. Samplers like res_multistep work pretty well at cfg 1.0\n\nThe official number of steps is 50 but I think that's too much. Even just 10 steps seems to work."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 71,
+      "type": "Note",
+      "pos": [
+        2260,
+        -450
+      ],
+      "size": [
+        300,
+        88
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Increase the shift if you get too many blury/dark/bad images. Decrease if you want to try increasing detail."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 73,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        420,
+        40
+      ],
+      "size": [
+        360,
+        82
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 293
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            385
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "models": [
+          {
+            "name": "Qwen-Image-Lightning-8steps-V1.0.safetensors",
+            "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.0.safetensors",
+            "directory": "loras"
+          }
+        ],
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "qwen\\Qwen-Image-Lightning-8steps-V2.0.safetensors",
+        1
+      ]
+    },
+    {
+      "id": 74,
+      "type": "MarkdownNote",
+      "pos": [
+        850,
+        660
+      ],
+      "size": [
+        310,
+        210
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "KSampler settings",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "You can test and find the best setting by yourself. The following table is for reference.\n\n| model            | steps | cfg |\n|---------------------|---------------|---------------|\n| fp8_e4m3fn（Qwen team's suggestion）             | 40                | 2.5               \n| fp8_e4m3fn             | 20                | 2.5               |\n| fp8_e4m3fn + 8steps LoRA    | 8               | 1.0               |\n| distill fp8_e4m3fn   | 10               | 1.0              |"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 78,
+      "type": "ClownsharKSampler_Beta",
+      "pos": [
+        2400,
+        -90
+      ],
+      "size": [
+        270,
+        418
+      ],
+      "flags": {},
+      "order": 51,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 133
+        },
+        {
+          "name": "positive",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": 134
+        },
+        {
+          "name": "negative",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": 135
+        },
+        {
+          "name": "latent_image",
+          "shape": 7,
+          "type": "LATENT",
+          "link": 136
+        },
+        {
+          "name": "sigmas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "guides",
+          "shape": 7,
+          "type": "GUIDES",
+          "link": null
+        },
+        {
+          "name": "options",
+          "shape": 7,
+          "type": "OPTIONS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "denoised",
+          "type": "LATENT",
+          "links": [
+            330,
+            375,
+            376
+          ]
+        },
+        {
+          "name": "options",
+          "type": "OPTIONS",
+          "links": []
+        }
+      ],
+      "title": "ClownsharKSampler 1st",
+      "properties": {
+        "cnr_id": "RES4LYF",
+        "ver": "7750bf7800b6ad9d670308a09989fc0c04c40cec",
+        "Node name for S&R": "ClownsharKSampler_Beta",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "eta": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "steps": true,
+            "steps_to_run": true,
+            "denoise": true,
+            "cfg": true,
+            "seed": true,
+            "sampler_mode": true,
+            "bongmath": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        0.67,
+        "exponential/ddim",
+        "beta57",
+        8,
+        -1,
+        1,
+        1,
+        20251026145310,
+        "fixed",
+        "standard",
+        true
+      ]
+    },
+    {
+      "id": 82,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        1930,
+        -200
+      ],
+      "size": [
+        450,
+        718
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 4,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 234
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 143
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [
+            144
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": []
+        }
+      ],
+      "title": "Power Lora Loader (rgthree) 1st Sampler",
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
+        "Show Strengths": "Single Strength",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": false,
+          "lora": "qwen\\亚洲网红大波美女.safetensors",
+          "strength": 0.4,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\lenovo.safetensors",
+          "strength": 0.67,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\iphone.safetensors",
+          "strength": 0.55,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\[QWEN] JTT2_5.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\breast_slider_qwen_v1.safetensors",
+          "strength": 1.3,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Real Breast Nipples-QWEN-[rbn]-GMR.safetensors",
+          "strength": 0.4,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen_MCNL_v1.0.safetensors",
+          "strength": 0.3,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Qwen-Image-Lightning-8steps-V2.0.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-boreal-portraits-portraits-high-rank.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Insta-Girls_QWEN_v2.safetensors",
+          "strength": 0.75,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen_gufeng-000002.safetensors",
+          "strength": 0.7,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\MEXX_QWEN_TG300_23.safetensors",
+          "strength": 0.75,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-Image_SmartphoneSnapshotPhotoReality_v4_by-AI_Characters_TRIGGER$amateur photo$.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Samsung.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-boreal-general-discrete-low-rank.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\real_life_qwen.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-iPhone-V1.1.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen_907X_Edited_Lesser_V2-8K5.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-image_nsfw_adv_v1.0.safetensors",
+          "strength": 0.25,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\QwenRebalanceV10_v10LoraR16.safetensors",
+          "strength": 0.55,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-cn-3.safetensors",
+          "strength": 0.7,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\nicegirls_alternative.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen_Nsfw_Body_V14-10K.safetensors",
+          "strength": 0.65,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\labubu_Qwen-LoRA_v2-000015.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\hinaQwenImageAsianMixLora_v2.safetensors",
+          "strength": 0.55,
+          "strengthTwo": null
+        },
+        {},
+        ""
+      ]
+    },
+    {
+      "id": 84,
+      "type": "UltimateSDUpscale",
+      "pos": [
+        5510,
+        -480
+      ],
+      "size": [
+        274.07501220703125,
+        614
+      ],
+      "flags": {},
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 350
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 385
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 149
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 150
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 151
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 153
+        },
+        {
+          "name": "tile_width",
+          "type": "INT",
+          "widget": {
+            "name": "tile_width"
+          },
+          "link": 394
+        },
+        {
+          "name": "tile_height",
+          "type": "INT",
+          "widget": {
+            "name": "tile_height"
+          },
+          "link": 324
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            351,
+            353
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ultimatesdupscale",
+        "ver": "b34d795e9d1030b25b552cd44452f18bbd18a60b",
+        "Node name for S&R": "UltimateSDUpscale",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "upscale_by": true,
+            "seed": true,
+            "steps": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "denoise": true,
+            "mode_type": true,
+            "tile_width": true,
+            "tile_height": true,
+            "mask_blur": true,
+            "tile_padding": true,
+            "seam_fix_mode": true,
+            "seam_fix_denoise": true,
+            "seam_fix_width": true,
+            "seam_fix_mask_blur": true,
+            "seam_fix_padding": true,
+            "force_uniform_tiles": true,
+            "tiled_decode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1,
+        31415926,
+        "fixed",
+        8,
+        1,
+        "res_2m",
+        "karras",
+        0.1,
+        "Linear",
+        1328,
+        1328,
+        16,
+        32,
+        "None",
+        1,
+        64,
+        16,
+        32,
+        true,
+        false
+      ]
+    },
+    {
+      "id": 86,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        5500,
+        -610
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            153
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "UpscaleModelLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model_name": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "4xLSDIR.pth"
+      ]
+    },
+    {
+      "id": 87,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        2420,
+        890
+      ],
+      "size": [
+        770,
+        1130
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 155
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 215
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
+        "comparer_mode": "Slide",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_riauq_00069_.png&type=temp&subfolder=&preview=webp&rand=0.27922238299004076"
+          }
+        ]
+      ]
+    },
+    {
+      "id": 88,
+      "type": "Width and height from aspect ratio 🪴",
+      "pos": [
+        40,
+        690
+      ],
+      "size": [
+        277.275,
+        126
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            363,
+            394
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            364
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Addoor",
+        "ver": "d51659f66696e9a89c7f6adbf159c1f074742b7a",
+        "Node name for S&R": "Width and height from aspect ratio 🪴",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "aspect_ratio": true,
+            "target_size": true,
+            "multiple_of": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "9:16",
+        1536,
+        64
+      ]
+    },
+    {
+      "id": 89,
+      "type": "FaceDetailer",
+      "pos": [
+        4130,
+        -640
+      ],
+      "size": [
+        500,
+        1070
+      ],
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 354
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 188
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 184
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 161
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 411
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 255
+        },
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 408
+        },
+        {
+          "name": "sam_model_opt",
+          "shape": 7,
+          "type": "SAM_MODEL",
+          "link": 166
+        },
+        {
+          "name": "segm_detector_opt",
+          "shape": 7,
+          "type": "SEGM_DETECTOR",
+          "link": 167
+        },
+        {
+          "name": "detailer_hook",
+          "shape": 7,
+          "type": "DETAILER_HOOK",
+          "link": 407
+        },
+        {
+          "name": "scheduler_func_opt",
+          "shape": 7,
+          "type": "SCHEDULER_FUNC",
+          "link": null
+        },
+        {
+          "name": "wildcard",
+          "type": "STRING",
+          "widget": {
+            "name": "wildcard"
+          },
+          "link": 397
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            326,
+            332,
+            348
+          ]
+        },
+        {
+          "name": "cropped_refined",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "cropped_enhanced_alpha",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "detailer_pipe",
+          "type": "DETAILER_PIPE",
+          "links": null
+        },
+        {
+          "name": "cnet_images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "f86c5afc68958afb89bf66898d6b5038ce98a096",
+        "Node name for S&R": "FaceDetailer",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "guide_size": true,
+            "guide_size_for": true,
+            "max_size": true,
+            "seed": true,
+            "steps": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "denoise": true,
+            "feather": true,
+            "noise_mask": true,
+            "force_inpaint": true,
+            "bbox_threshold": true,
+            "bbox_dilation": true,
+            "bbox_crop_factor": true,
+            "sam_detection_hint": true,
+            "sam_dilation": true,
+            "sam_threshold": true,
+            "sam_bbox_expansion": true,
+            "sam_mask_hint_threshold": true,
+            "sam_mask_hint_use_negative": true,
+            "drop_size": true,
+            "wildcard": true,
+            "cycle": true,
+            "inpaint_model": true,
+            "noise_mask_feather": true,
+            "tiled_encode": true,
+            "tiled_decode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1024,
+        true,
+        1024,
+        123456877,
+        "fixed",
+        8,
+        1,
+        "res_2s",
+        "bong_tangent",
+        0.4,
+        16,
+        true,
+        true,
+        0.55,
+        16,
+        4,
+        "center-1",
+        8,
+        0.75,
+        8,
+        0.69,
+        "False",
+        100,
+        "",
+        1,
+        false,
+        16,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 92,
+      "type": "SAMLoader",
+      "pos": [
+        3800,
+        260
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            166,
+            343
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "f86c5afc68958afb89bf66898d6b5038ce98a096",
+        "Node name for S&R": "SAMLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model_name": true,
+            "device_mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "sam_vit_l_0b3195.pth",
+        "AUTO"
+      ]
+    },
+    {
+      "id": 93,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        3830,
+        370
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": null
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": [
+            167
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-subpack",
+        "ver": "50c7b71a6a224734cc9b21963c6d1926816a97f1",
+        "Node name for S&R": "UltralyticsDetectorProvider",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model_name": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "segm/Anzhcs WomanFace v05 1024 y8n.pt"
+      ]
+    },
+    {
+      "id": 94,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        4740,
+        -530
+      ],
+      "size": [
+        530,
+        810
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 218
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 326
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
+        "comparer_mode": "Click",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_axvfc_00007_.png&type=temp&subfolder=&preview=webp&rand=0.8771771252853101"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_axvfc_00008_.png&type=temp&subfolder=&preview=webp&rand=0.7194443382357453"
+          }
+        ]
+      ]
+    },
+    {
+      "id": 97,
+      "type": "CLIPTextEncode",
+      "pos": [
+        3760,
+        -20
+      ],
+      "size": [
+        280,
+        88
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 183
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 186
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            411
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "a young beautiful East Asian woman"
+      ]
+    },
+    {
+      "id": 98,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        3800,
+        170
+      ],
+      "size": [
+        197.72500610351562,
+        26
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 409
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            255
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "ConditioningZeroOut",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 99,
+      "type": "Note",
+      "pos": [
+        3370,
+        410
+      ],
+      "size": [
+        610,
+        250
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "一位年轻{中國|韓國|日本|中韓|中日|日韓|東亞}女性的特写肖像照，面部特征清晰柔和。她拥有白皙细腻的肌肤，透出自然健康的光泽；深棕色的长直发柔顺垂落肩头，额前齐眉刘海整齐服帖，发丝在光线下泛着微亮光泽。她的脸型为标准{鹅蛋脸|瓜子臉|圓臉|長臉}，轮廓线条流畅柔和。{柳葉眉，細長彎曲，如柳葉|一字眉，平直無弧度|遠山眉，細淡柔和，似有若無|劍眉，粗直銳利，眉峰明顯|八字眉，眉尾下垂，呈八形|臥蠶眉，彎曲如月牙，眉峰圓潤|淡眉，眉色淺淡，輪廓模糊|確眉，濃密寬厚，輪廓清晰}。双眼{大|小}而明亮，呈{杏仁形|圓形|長方形|鳳眼|下垂眼|桃花眼|丹鳳眼}，{單眼皮|內雙|平行雙眼皮|開扇形雙眼皮|新月形雙眼皮|歐式雙眼皮|吊眼|下垂眼}，瞳孔为深褐色，眼尾微微上扬，睫毛纤长浓密，眼神清澈温柔中带着笑意。{小巧挺直鼻，細長微挺，鼻尖圓潤|鷹鉤鼻，鼻梁高挺，鼻尖微勾|蒜頭鼻，鼻尖圓潤飽滿|朝天鼻，鼻尖上翹，鼻孔微露|塌鼻梁，鼻梁平緩，無山根|高鼻梁，鼻梁高挺，山根明顯|水滴鼻，鼻尖圓潤下垂}。双唇饱满红润，嘴角自然上扬，露出整齐洁白的牙齿，笑容甜美亲切。脸颊略带自然红晕，增添青春活力感。超清，4K，电影级构图\n\n一位年轻女性的特写肖像照，她佩戴一副纤细金属边框的圆形眼镜，镜片透明无度数，镜框颜色为玫瑰金色，与她的肤色和谐相融。她的脸型柔和呈鹅蛋形，皮肤白皙细腻，透出自然光泽；眉毛细长而弯，呈自然深棕色，眉尾微微上扬；双眼大而明亮，瞳孔为深褐色，眼尾略微上翘，眼神清澈温柔，睫毛浓密卷翘，眼妆极淡仅以浅棕色眼影轻扫眼窝；鼻梁挺直小巧，鼻尖微翘；嘴唇饱满呈自然粉红色，嘴角上扬露出整齐洁白的牙齿，笑容甜美亲切。她的黑发柔顺垂落肩头，前额留有空气刘海，发丝在阳光下泛着健康光泽。她身穿白色碎花短袖上衣，领口带荷叶边设计，背景为虚化的绿色植物，营造清新自然氛围。画面采用纪实摄影风格，光线柔和均匀，聚焦于面部细节，突出眼镜与五官的协调美感。超清，4K，电影级构图"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 100,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        3370,
+        -130
+      ],
+      "size": [
+        350,
+        502
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 181
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 182
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [
+            187
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": [
+            183,
+            184
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
+        "Show Strengths": "Single Strength",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": false,
+          "lora": "qwen\\1GIRL_QWEN_V1.safetensors",
+          "strength": 0.2,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\亚洲网红大波美女.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-Image_SmartphoneSnapshotPhotoReality_v4_by-AI_Characters_TRIGGER$amateur photo$.safetensors",
+          "strength": 0.6,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Insta-Girls_QWEN_v2.safetensors",
+          "strength": 0.3,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\1GIRL_QWEN_V3.safetensors",
+          "strength": 0.3,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\adorablegirls.safetensors",
+          "strength": 0.25,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\hinaQwenImageAsianMixLora_v2.safetensors",
+          "strength": 0.65,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Qwen-Image-Lightning-8steps-V2.0.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-boreal-portraits-portraits-high-rank.safetensors",
+          "strength": 0.65,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen_907X_Edited_Lesser_V2-8K5.safetensors",
+          "strength": 0.6,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\QwenRebalanceV10_v10LoraR16.safetensors",
+          "strength": 0.75,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-Image-Analog-v1.1.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Samsung.safetensors",
+          "strength": 0.75,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\QwenPersonPhotosylte_000046000.safetensors",
+          "strength": 0.45,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\ImzQwenPortraitPro.safetensors",
+          "strength": 0.5,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Human_Focus_Photography_v2.0_alpha_1.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {},
+        ""
+      ]
+    },
+    {
+      "id": 103,
+      "type": "ImpactWildcardProcessor",
+      "pos": [
+        3390,
+        -630
+      ],
+      "size": [
+        690,
+        430
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed text",
+          "type": "STRING",
+          "links": [
+            186,
+            397
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "cb0655f9a11ad771b4f6a846f08be29b5b66f0eb",
+        "Node name for S&R": "ImpactWildcardProcessor",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "wildcard_text": true,
+            "populated_text": true,
+            "mode": true,
+            "seed": true,
+            "Select to add Wildcard": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "一位年轻优雅迷人亞州女性，面部特征清晰柔和。她拥有白皙细腻的肌肤，透出自然健康的光泽；深棕色的发柔顺垂落，发丝在光线下泛着微亮光泽。她的脸型为标准{鹅蛋脸|瓜子臉|圓臉|長臉}，轮廓线条流畅柔和。{柳葉眉，細長彎曲，如柳葉|一字眉，平直無弧度|遠山眉，細淡柔和，似有若無|劍眉，粗直銳利，眉峰明顯|八字眉，眉尾下垂，呈八形|臥蠶眉，彎曲如月牙，眉峰圓潤|淡眉，眉色淺淡，輪廓模糊|確眉，濃密寬厚，輪廓清晰}。双眼{大|小}而明亮，呈{杏仁形|圓形|長方形|鳳眼|下垂眼|桃花眼|丹鳳眼}，{單眼皮|內雙|平行雙眼皮|開扇形雙眼皮|新月形雙眼皮|歐式雙眼皮|吊眼|下垂眼}，瞳孔为深褐色，眼尾微微上扬，睫毛纤长浓密，眼神清澈温柔中带着笑意。{小巧挺直鼻，細長微挺，鼻尖圓潤|鷹鉤鼻，鼻梁高挺，鼻尖微勾|蒜頭鼻，鼻尖圓潤飽滿|朝天鼻，鼻尖上翹，鼻孔微露|塌鼻梁，鼻梁平緩，無山根|高鼻梁，鼻梁高挺，山根明顯|水滴鼻，鼻尖圓潤下垂}。双唇饱满红润。画面采用高精度人像摄影风格。超清。\nExtreme close-up of a young woman’s face, soft front lighting; subtle blush on cheeks and nose bridge. Skin shows natural multi-layer subsurface scattering, simulating epidermal, dermal, and hypodermal depth — red tones diffuse deeper, while cooler tones scatter superficially, enhancing realism in transition zones (e.g., jawline to neck shadow). Smooth complexion, large expressive eyes, slight dewy sheen.",
+        "一位年轻优雅迷人亞州女性，面部特征清晰柔和。她拥有白皙细腻的肌肤，透出自然健康的光泽；深棕色的发柔顺垂落，发丝在光线下泛着微亮光泽。她的脸型为标准圓臉，轮廓线条流畅柔和。柳葉眉，細長彎曲，如柳葉。双眼大而明亮，呈丹鳳眼，下垂眼，瞳孔为深褐色，眼尾微微上扬，睫毛纤长浓密，眼神清澈温柔中带着笑意。小巧挺直鼻，細長微挺，鼻尖圓潤。双唇饱满红润。画面采用高精度人像摄影风格。超清。\nExtreme close-up of a young woman’s face, soft front lighting; subtle blush on cheeks and nose bridge. Skin shows natural multi-layer subsurface scattering, simulating epidermal, dermal, and hypodermal depth — red tones diffuse deeper, while cooler tones scatter superficially, enhancing realism in transition zones (e.g., jawline to neck shadow). Smooth complexion, large expressive eyes, slight dewy sheen.",
+        "reproduce",
+        999888777668090,
+        "increment",
+        "Select the Wildcard to add to the text"
+      ]
+    },
+    {
+      "id": 104,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        3760,
+        -130
+      ],
+      "size": [
+        300,
+        58
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 187
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            188
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        2.62
+      ]
+    },
+    {
+      "id": 105,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        2170,
+        890
+      ],
+      "size": [
+        230,
+        58
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 302
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            224
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        2.62
+      ]
+    },
+    {
+      "id": 109,
+      "type": "ClownsharKSampler_Beta",
+      "pos": [
+        2130,
+        1010
+      ],
+      "size": [
+        270,
+        438
+      ],
+      "flags": {},
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 224
+        },
+        {
+          "name": "positive",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": 236
+        },
+        {
+          "name": "negative",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": 212
+        },
+        {
+          "name": "latent_image",
+          "shape": 7,
+          "type": "LATENT",
+          "link": 386
+        },
+        {
+          "name": "sigmas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "guides",
+          "shape": 7,
+          "type": "GUIDES",
+          "link": null
+        },
+        {
+          "name": "options",
+          "shape": 7,
+          "type": "OPTIONS",
+          "link": 393
+        },
+        {
+          "name": "options 2",
+          "type": "OPTIONS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "denoised",
+          "type": "LATENT",
+          "links": [
+            270
+          ]
+        },
+        {
+          "name": "options",
+          "type": "OPTIONS",
+          "links": null
+        }
+      ],
+      "title": "ClownsharKSampler 2nd",
+      "properties": {
+        "cnr_id": "RES4LYF",
+        "ver": "7750bf7800b6ad9d670308a09989fc0c04c40cec",
+        "Node name for S&R": "ClownsharKSampler_Beta",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "eta": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "steps": true,
+            "steps_to_run": true,
+            "denoise": true,
+            "cfg": true,
+            "seed": true,
+            "sampler_mode": true,
+            "bongmath": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        0.8,
+        "linear/rk4_4s",
+        "normal",
+        8,
+        -1,
+        1,
+        1,
+        31415926535897,
+        "fixed",
+        "standard",
+        true
+      ]
+    },
+    {
+      "id": 110,
+      "type": "Width and height from aspect ratio 🪴",
+      "pos": [
+        2400,
+        390
+      ],
+      "size": [
+        277.275,
+        126
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            245
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            246
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Addoor",
+        "ver": "d51659f66696e9a89c7f6adbf159c1f074742b7a",
+        "Node name for S&R": "Width and height from aspect ratio 🪴",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "aspect_ratio": true,
+            "target_size": true,
+            "multiple_of": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "9:16",
+        1242,
+        64
+      ]
+    },
+    {
+      "id": 113,
+      "type": "VAEDecode",
+      "pos": [
+        2170,
+        1510
+      ],
+      "size": [
+        210.0999969482422,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 270
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 214
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            215,
+            218,
+            354
+          ]
+        }
+      ],
+      "title": "VAE Decode (2nd sampler)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 114,
+      "type": "CR Prompt List",
+      "pos": [
+        70,
+        900
+      ],
+      "size": [
+        740,
+        700
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "multiline_text",
+          "type": "STRING",
+          "widget": {
+            "name": "multiline_text"
+          },
+          "link": 400
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            379,
+            404
+          ]
+        },
+        {
+          "name": "body_text",
+          "shape": 6,
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyroll",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Prompt List",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "巨乳大胸，肤白貌美，完美勾勒出玲珑有致的身姿，非摆拍，日常抓拍感，双色温混合色调，",
+        "一位气质冷艳的巨乳大胸古风女子，身着一袭酒红色露胸长袍，外衫以丝质面料制成，光泽柔和，衣襟与袖口处绣有暗纹云纹与花卉图案，细节精致典雅。内衬白色交领中衣，领口微敞，线条流畅自然。她腰间束一条宽幅深棕色腰带，配以繁复雕花金属带扣，镶嵌古典纹饰，凸显侠气与贵气并存的气质。乌黑长发高高盘起，发髻插着一支造型古朴的银色发簪，几缕青丝垂落肩前，随风轻扬，增添柔美动感。她的妆容清丽脱俗——眉形细长如远山，眼线勾勒出锐利神采，双眸清澈明亮，直视镜头，神情沉静而坚定；唇色为饱满朱红，与红衣相映成辉。背景为朦胧淡蓝调的竹林或雾霭山景，虚化处理突出人物主体，营造空灵悠远的意境。画面采用中国风写实绘画风格，光影细腻柔和，色彩对比鲜明却不失和谐，构图聚焦于人物上半身，呈现古典武侠或仙侠题材中兼具英气与柔美的女性形象。超清，4K，电影级构图\n一位仙气飘逸的巨乳大胸古风女子，身着一袭素雅浅白色露胸交领长袍，面料轻盈如云，质感柔滑且带有自然垂坠褶皱，衣襟微敞，线条流畅优雅。乌黑如瀑的长发高束于头顶，发髻间点缀一对晶莹剔透的蝉翼状发饰，在光线下泛着清冷光泽；几缕发丝随风轻扬，拂过脸颊与肩头，增添灵动与呼吸感。她佩戴一对细链珍珠耳坠，珠圆玉润，随动作微微晃动，衬托出温婉气质。妆容淡雅精致——眉形细长柔和，眼线勾勒出清澈双眸，睫毛纤长卷翘，眼神宁静温柔，直视镜头，流露超凡脱俗之感；唇色为柔润豆沙粉，自然饱满，与整体清冷氛围和谐统一。背景为灰蓝色渐变幕布，略带朦胧雾气，营造空灵缥缈的仙境氛围。画面采用中国风写实绘画风格，光影细腻柔和，突出人物面部神韵与服饰纹理，构图聚焦上半身特写，呈现如画中仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位华贵典雅的巨乳大胸古风仙子，身着层层叠叠的露胸幻彩霓裳，主色调为淡紫、粉金与柔黄交织，衣料轻盈如纱，半透明薄绸披肩随风微扬，内衬绘有流动云纹与祥瑞图案，色彩斑斓却不失和谐。她头戴一顶精雕细琢的金色凤冠，冠顶镶嵌红宝石与蓝釉花纹，两侧延展出羽翼造型，缀满黄、红、绿、紫等绚丽羽毛，流苏垂坠，珠链摇曳，尽显皇家气派与神话色彩。额间点一颗小巧月牙形花钿，眉目清秀，眼线纤长勾勒出温柔神采，双眸清澈明亮，直视前方，神情宁静而高贵；唇色为饱满正红，与整体妆容相得益彰。耳畔垂挂金链红宝流苏耳坠，颈间佩戴镶嵌蓝紫水晶与珍珠的华丽项链，每一颗宝石都闪耀光泽，细节极致考究。背景为虚化的灰白色石阶或宫殿廊柱，营造庄重神圣的氛围。画面采用中国风写实绘画风格，光影柔和细腻，聚焦人物上半身与服饰配饰的繁复美感，构图居中稳定，呈现如敦煌飞天般绚烂夺目、仙气缭绕的古典神话形象。超清，4K，电影级构图\n一位清冷出尘的巨乳大胸古风女子，身着一袭薄如蝉翼的纯白色露胸透视纱衣，面料轻盈飘逸，层层叠叠自然垂落，隐约勾勒曼妙身形，肩部与胸前以柔滑缎带缠绕固定，线条流畅优雅。乌黑长发高束成典雅发髻，发间点缀一支晶莹剔透的水晶花朵发簪，缀有细链与水滴形珠饰，随微风轻晃，泛着清冷光泽；几缕青丝被风拂动，掠过脸颊与肩头，增添灵动与呼吸感。她佩戴一对水滴形水晶耳坠，通透澄澈，与发饰相映成辉。妆容淡雅精致——眉形细长柔和，眼线勾勒出清澈双眸，睫毛纤长卷翘，眼神宁静温柔，直视镜头，流露超凡脱俗之气；唇色为柔润珊瑚粉，自然饱满，与整体清冷氛围和谐统一。背景为深灰蓝色渐变幕布，略带朦胧雾气，营造空灵缥缈的仙境氛围。画面采用中国风写实绘画风格，光影细腻柔和，突出人物面部神韵与服饰纹理，构图聚焦上半身特写，呈现如画中仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位清冷出尘的巨乳大胸古风女子，身着一袭薄如蝉翼的纯白色露胸透视纱衣，面料轻盈飘逸，层层叠叠自然垂落，隐约勾勒曼妙身形，肩部与胸前以柔滑缎带缠绕固定，线条流畅优雅。乌黑长发高束成典雅发髻，发间点缀一支晶莹剔透的水晶花朵发簪，缀有细链与水滴形珠饰，随微风轻晃，泛着清冷光泽；几缕青丝被风拂动，掠过脸颊与肩头，增添灵动与呼吸感。她佩戴一对水滴形水晶耳坠，通透澄澈，与发饰相映成辉。妆容淡雅精致——眉形细长柔和，眼线勾勒出清澈双眸，睫毛纤长卷翘，眼神宁静温柔，直视镜头，流露超凡脱俗之气；唇色为柔润珊瑚粉，自然饱满，与整体清冷氛围和谐统一。背景为深灰蓝色渐变幕布，略带朦胧雾气，营造空灵缥缈的仙境氛围。画面采用中国风写实绘画风格，光影细腻柔和，突出人物面部神韵与服饰纹理，构图聚焦上半身特写，呈现如画中仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位温婉如玉的巨乳大胸大胸古风女子，身着一袭素雅浅灰白色露胸交领长袍，外披轻盈薄纱，衣料柔滑透光，袖口与领边绣有淡雅小花暗纹，层次丰富而细腻。她乌黑长发高盘成古典发髻，发间点缀一支银质蓝花发簪，花瓣晶莹剔透，缀有细链垂珠，随动作轻晃，流露精致细节；两侧垂落两缕青丝，自然贴合肩颈曲线，增添柔美气息。耳畔佩戴细链珍珠流苏耳坠，珠圆玉润，与发饰相映生辉。她的妆容清丽淡雅——眉形柔和上扬，眼线纤细勾勒出明亮双眸，睫毛浓密卷翘，眼神温柔含情，侧首凝望远方，神情若有所思；唇色为柔润豆沙红，饱满自然，衬托白皙肌肤。背景为虚化的暖棕色木质屏风或古建筑内景，光影柔和朦胧，营造宁静典雅的氛围。画面采用中国风写实绘画风格，光线从侧上方洒落，在人物面部与衣褶处形成细腻明暗过渡，构图聚焦上半身特写，呈现如仕女图般温婉、端庄、富有诗意的古典东方美感。超清，4K，电影级构图\n一位冷艳高贵的巨乳大胸古风仙子，身着一袭银白色露胸丝质长袍，衣料光泽如月华流淌，领口与袖口绣有精致冰晶纹样，边缘泛着幽蓝光晕，仿佛凝结霜雪。她乌黑长发高束成典雅发髻，发间镶嵌银色冰晶枝叶造型头饰，缀有细链流苏，在冷光下闪烁微芒；几缕发丝被无形气流轻拂，飘逸灵动，增添神秘气息。耳畔垂挂水滴形水晶耳坠，通透澄澈，颈间佩戴繁复银链镶蓝宝石项链，中央主石呈雪花状，四周垂坠晶莹珠串，尽显华贵与清冷气质。妆容精致冷冽——眉形细长如远山，眼线勾勒出深邃双眸，睫毛纤长卷翘，眼神沉静坚定，直视镜头，唇色为柔润珊瑚红，与整体冷调氛围形成微妙对比。背景为深灰蓝色朦胧空间，点缀散落光斑，营造幽邃仙境之感。画面采用中国风写实绘画风格，光影以冷蓝为主调，突出人物面部神韵与服饰纹理细节，构图聚焦上半身特写，呈现如冰雪女神般圣洁、威严、超凡脱俗的古典神话形象。超清，4K，电影级构图\n一位圣洁如仙的巨乳大胸古风女子，身着一袭纯白色露胸式礼服，面料柔滑如缎，胸前与肩带处绣有精致银线花卉刺绣，细节雅致。外披轻盈薄纱长 veil，自头顶垂落至肩背，随微风轻扬，营造飘逸空灵之感。乌黑长发高盘成古典发髻，发间点缀细小珍珠与银质花枝发饰，两侧垂落两缕青丝，自然贴合肩颈线条，增添温柔气息。耳畔佩戴细链珍珠流苏耳坠，珠圆玉润，随动作轻晃，衬托清丽面容。妆容淡雅纯净——眉形柔和上扬，眼线纤细勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，直视镜头，流露圣洁与内敛之美；唇色为柔润珊瑚粉，自然饱满，与白皙肌肤相得益彰。背景为深灰蓝色朦胧幕布，左侧透出一道柔和光束，如月华洒落，烘托人物神圣氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位清冷出尘的巨乳大胸古风仙子，身着一袭薄如蝉翼的纯白色露胸透视纱衣，内衬淡青色露胸，面料轻盈飘逸，层层叠叠自然垂落，若隐若现勾勒柔美身形。乌黑长发高束成典雅发髻，发间点缀晶莹剔透的冰晶状发饰与细链珠串，在冷光下泛着幽微光泽；几缕青丝被风拂动，掠过脸颊与肩头，增添灵动与呼吸感。耳畔垂挂细长银链水滴形水晶耳坠，通透澄澈，随动作轻晃，与发饰相映生辉。妆容淡雅精致——眉形细长柔和，眼线勾勒出清澈双眸，睫毛纤长卷翘，眼神宁静温柔，直视镜头，流露超凡脱俗之气；唇色为柔润珊瑚红，自然饱满，与整体清冷氛围和谐统一。背景为朦胧灰蓝色林间雾景，虚化处理突出人物主体，营造空灵缥缈的仙境氛围。画面采用中国风写实绘画风格，光影以冷蓝为主调，细腻柔和，聚焦人物上半身特写，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位圣洁如霜的巨乳大胸古风仙界女神，身着一袭纯白色露胸高领长裙，面料轻盈如雪，肩部与胸前缀满细密银色亮片与水晶刺绣，随光线流转闪烁微芒；外披薄纱披肩，边缘饰有蕾丝花边，飘逸若云。她拥有一头银白色长发，高束成优雅马尾，发根处佩戴镶嵌蓝宝石与珍珠的额饰，中央垂落一颗晶莹水滴，两侧发丝如流光般散落肩头，随风轻扬，增添灵动气息。耳畔垂挂繁复水晶吊坠耳环，颈间系有细链镶钻项链，每一颗宝石都折射清冷光辉，尽显神性华贵。妆容精致冷冽——眉形纤细上扬，眼线勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静坚定，直视镜头，唇色为柔润珊瑚粉，与整体冷调氛围形成微妙平衡。背景为灰白渐变朦胧空间，光影柔和如月华倾泻，营造神圣空灵之境。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如冰雪女神般纯净、高贵、超凡脱俗的古典神话形象。超清，4K，电影级构图\n一位雍容华贵的巨乳大胸古风贵妃，身着一袭银灰蓝色露胸交领长袍，面料如绸缎般柔滑光润，衣襟与袖口饰以繁复金线刺绣云纹与卷草纹，边缘镶有鎏金滚边，尽显皇家气派。内衬纯白中衣，领口微敞，线条优雅流畅。她乌黑长发高盘成古典发髻，发间佩戴一顶精雕细琢的金质凤冠，冠顶镶嵌红宝石与蓝釉花卉，两侧垂落珍珠流苏与银链花饰，随动作轻晃，熠熠生辉。额间点一颗朱砂花钿，眉目清秀，眼线纤长勾勒出温婉双眸，睫毛浓密卷翘，眼神沉静含情，直视前方，神情端庄而内敛；唇色为饱满珊瑚红，与整体妆容相得益彰。耳畔垂挂金托蓝宝水滴形耳坠，颈间佩戴多层金链嵌宝项链，中央主石为椭圆形蓝绿宝石，缀有红珠与珍珠，华美而不失雅致。背景为古雅宫廷内景，暖黄色灯光映照木质屏风与案几，营造温馨庄重氛围。画面采用中国风写实绘画风格，光影柔和细腻，聚焦人物上半身与服饰配饰的精致细节，构图居中稳定，呈现如唐代仕女图般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位清冷如雪的巨乳大胸古风仙子，身着一袭纯白色露胸宽袖长袍，面料轻盈柔滑，层叠褶皱自然垂落，衣摆与袖口随微风轻扬，仿佛凝结霜雪。她乌黑长发高束成典雅发髻，发间点缀一朵素雅白花与一支银质梅花发簪，缀有细链珍珠垂坠，随动作轻晃，泛着清冷光泽；几缕青丝被风拂动，掠过脸颊与肩头，增添灵动气息。耳畔佩戴细链珍珠流苏耳坠，珠圆玉润，与发饰相映生辉。妆容淡雅纯净——眉形柔和上扬，眼线勾勒出清澈双眸，睫毛纤长卷翘，眼神宁静温柔，直视镜头，流露超凡脱俗之气；唇色为柔润豆沙粉，自然饱满，衬托白皙肌肤。她右手轻抚下颌，姿态优雅含蓄，左手自然搭于膝上，神情沉静若有所思。背景为朦胧灰白色雪景或雾霭山林，虚化处理突出人物主体，营造空灵缥缈、寂静清寒的仙境氛围。画面采用中国风写实绘画风格，光影以冷蓝白为主调，细腻柔和，聚焦人物上半身特写，构图居中稳定，呈现如月下雪女般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位温婉如玉的巨乳大胸古风仕女，身着一袭素雅米白色露胸长裙，外披轻盈薄纱披帛，衣料柔滑透光，层层叠叠自然垂落于地面，裙摆与袖口绣有淡雅花卉暗纹，细节精致典雅。她乌黑长发高盘成古典发髻，发间点缀数朵洁白小花与流苏珠串，随动作轻晃，增添柔美气息；几缕青丝垂落肩前，衬托白皙肌肤。妆容清丽淡雅——眉形细长柔和，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神温柔含情，侧首凝望远方，神情若有所思；唇色为柔润珊瑚红，饱满自然。她端坐于木质地板上，右手轻放膝头，左手自然垂落，姿态优雅从容。背景为古雅中式室内场景，左侧木桌上摆放一盏暖黄灯光的葫芦形纸灯笼，旁置小巧铜香炉与茶盏，右侧可见雕花木窗，窗外隐约透入微光，营造温馨静谧氛围。画面采用中国风写实绘画风格，光影柔和温暖，聚焦人物全身姿态与服饰纹理，构图稳定平衡，呈现如仕女图般温婉、端庄、富有诗意的古典东方美感。超清，4K，电影级构图\n一位风姿绰约的巨乳大胸古风佳人，身着一袭典雅蓝白相间的露胸交领长袍，外披轻盈薄纱披帛，面料柔滑透光，随身形自然垂落。内衬白色蕾丝露胸，边缘精致镂空，与深蓝色锦缎腰带及绣有金线云纹与花卉图案的衣襟相映成辉，尽显华贵与柔美并存。她乌黑长发高束成古典发髻，发间点缀一朵深蓝色绢花与银质星芒发饰，两侧垂落两缕青丝，随微风轻扬，增添灵动气息。耳畔佩戴繁复水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在阳光下折射微芒。妆容精致温婉——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，直视镜头；唇色为饱满正红，与整体色调和谐统一。她右手轻抚肩头薄纱，姿态优雅从容，左手自然垂落，流露自信与从容气韵。背景为古雅木质回廊，雕花窗棂透入明亮日光，光影交错洒落于人物与地面，营造温暖宁静氛围。画面采用中国风写实绘画风格，色彩饱和度适中，突出服饰纹理与面部神韵，构图聚焦上半身特写，呈现如画中仙子般高贵、柔美、富有东方韵味的古典形象。超清，4K，电影级构图\n一位华贵如仙的巨乳大胸古风女神，身着一袭柔粉与象牙白交织的露胸宫廷长裙，面料如丝绸般柔滑光润，外披轻盈薄纱披帛，随风微扬，层叠褶皱间泛着柔和光泽。内衬白色蕾丝露胸，边缘饰以金线刺绣卷草纹，领口与肩带处缀有细密珠链，尽显精致奢华。腰间束一条宽幅金色腰带，镶嵌立体花卉与珍珠，垂落多条流苏与珠串，随动作轻晃，熠熠生辉。她乌黑长发高盘成典雅发髻，发间佩戴一顶繁复银质花冠，缀满白色绢花与水晶珠链，额前垂落一颗晶莹水滴形额饰，两侧青丝如瀑倾泻肩背，被无形气流拂动，飘逸灵动。耳畔垂挂繁复水晶吊坠耳环，颈间佩戴多层镶钻项链，每一颗宝石都折射温暖光辉。妆容柔美精致——眉形纤细上扬，眼线勾勒出深邃双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为柔润珊瑚红，饱满自然，与整体暖调氛围相得益彰。她右手轻抬至脸颊旁，姿态优雅含蓄，左手自然垂落，流露自信与从容。背景为浅米色浮雕花卉纹样墙面，光影柔和如晨曦洒落，营造梦幻圣洁氛围。画面采用中国风写实绘画风格，色彩饱和度适中，聚焦人物全身姿态与服饰配饰的繁复美感，构图居中稳定，呈现如敦煌飞天般绚烂夺目、仙气缭绕的古典神话形象。超清，4K，电影级构图\n一位神秘冷艳的巨乳大胸古风仙子，身着一袭幽蓝渐变露胸长裙，面料如水般柔滑，外披轻盈薄纱披帛，随身形自然垂落，衣襟与领口镶有细密金线滚边，在光影下泛着微芒。内衬深蓝色紧身裙体，勾勒曼妙曲线，腰间束一条繁复银质腰带，中央镶嵌蓝宝石花饰，缀有多层流苏与珠链，随动作轻晃，尽显华贵与灵动感。她乌黑长发高盘成古典发髻，发间点缀水晶枝叶与珍珠发饰，几缕青丝被光束拂动，掠过肩头，增添飘逸气息。耳畔垂挂多层水晶流苏耳坠，颈间佩戴繁复银链镶宝项链，主石为水滴形蓝晶，与整体色调呼应。妆容精致冷冽——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静坚定，直视镜头；唇色为饱满正红，与冷调服饰形成强烈对比，更显气场。背景为深灰蓝色朦胧空间，左侧一道强光自窗隙倾泻而入，如月华穿透暗室，照亮人物半身，营造戏剧性光影效果。画面采用中国风写实绘画风格，光影对比强烈，聚焦人物上半身与服饰细节，构图居中稳定，呈现如夜之女神般高贵、神秘、超凡脱俗的古典神话形象。超清，4K，电影级构图\n一位温婉如竹的巨乳大胸古风仙子，身着一袭柔白与淡青交织的露胸飘逸长裙，面料轻盈如雾，外披多层薄纱披帛，随微风轻扬，层叠褶皱间泛着柔和光泽。内衬白色蕾丝露胸，边缘饰以立体花卉刺绣，领口深V设计优雅含蓄，腰间系一条淡青色丝带，打成蝴蝶结垂落于前，增添柔美气息。裙身遍布精致白花暗纹，与袖口、下摆处的蕾丝花边相映成趣，尽显匠心工艺。她乌黑长发高束成古典发髻，发间点缀数朵洁白小花与细链珠串，几缕青丝被风拂动，掠过脸颊与肩头，增添灵动自然之感。耳畔佩戴繁复水晶吊坠耳环，晶莹剔透，在阳光下折射微芒。妆容清丽淡雅——眉形柔和上扬，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为柔润豆沙粉，自然饱满，衬托白皙肌肤。她右手轻捻一缕发丝，姿态优雅从容，左手自然垂落，流露自信与宁静。背景为幽静竹林，翠绿竹竿挺拔林立，地面铺满落叶，阳光透过竹叶洒下斑驳光斑，营造清新自然、诗意盎然的氛围。画面采用中国风写实绘画风格，光影柔和温暖，聚焦人物全身姿态与服饰纹理，构图居中稳定，呈现如林间仙子般纯净、高贵、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉娴静的巨乳大胸古风仕女，身着一袭柔粉与象牙白相间的露胸式长裙，内衬为纯白缎面，胸前绣有金线卷草纹样，精致典雅；外披轻盈薄纱披帛，半透明面料缀有淡粉色花卉刺绣，随身形自然垂落，袖口与裙摆饰以同色系滚边，层次丰富。腰间系一条柔粉丝带，打成蝴蝶结垂于腹前，增添少女气息。她乌黑长发高盘成古典发髻，发间点缀粉白绢花与银质流苏步摇，珠串轻晃，映衬清丽面容。妆容淡雅温柔——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，侧首凝望远方；唇色为柔润珊瑚红，饱满自然。她端坐于雕花木椅之上，右手轻放膝头，左手自然搭于椅背，姿态优雅从容。脚穿米白色细带高跟凉鞋，露出修长小腿，增添现代与古典交融的美感。背景为中式古典室内场景，左侧可见木质格窗，右侧为雕花木柜，地面铺有浅色地毯，整体氛围温馨静谧。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如仕女图般温婉、端庄、富有诗意的东方古典韵味。超清，4K，电影级构图\n一位雍容华贵的巨乳大胸古风宫廷贵妃，身着一袭柔粉色露胸式两件套华服，上身为紧身缎面露胸，饰有金线刺绣卷草纹与立体花卉图案，边缘镶有细密珠链；下身为同色系高腰长裙，腰间束一条繁复银质腰带，中央镶嵌宝石花饰，缀有多层流苏与珍珠垂坠，尽显皇家气派。外披轻盈薄纱披帛，半透明面料随身形自然垂落，袖口宽大飘逸，增添柔美气息。她乌黑长发高盘成典雅发髻，发间佩戴一顶精雕细琢的金质凤冠，冠顶镶嵌粉红宝石与白玉花卉，两侧垂落多层珍珠与水晶流苏，随动作轻晃，熠熠生辉。额间点一颗小巧花钿，眉目清秀，眼线纤长勾勒出温婉双眸，睫毛浓密卷翘，眼神沉静含情，直视镜头；唇色为饱满珊瑚红，与整体妆容相得益彰。耳畔垂挂繁复金托珍珠耳坠，颈间佩戴多层珍珠项链，主坠为水滴形宝石，华美而不失雅致。她端坐于雕花金漆宝座之上，右手轻放膝头，左手自然搭于扶手，姿态优雅从容。背景为富丽堂皇的宫殿内景，金色雕花屏风与梁柱在暖光下闪耀，营造庄重奢华氛围。画面采用中国风写实绘画风格，光影柔和温暖，聚焦人物全身姿态与服饰配饰的繁复美感，构图居中稳定，呈现如唐代仕女图般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位清雅如兰的巨乳大胸古风少女，身着一袭浅灰蓝色露胸吊带长裙，面料柔滑轻盈，外披一件半透明薄纱披帛，袖口与衣襟处绣有淡雅红花与绿叶图案，增添几分灵动与诗意。腰间系一条宽幅白色腰带，饰以鲜艳牡丹花纹，中央打成粉色蝴蝶结垂落于前，色彩对比鲜明却不失和谐。她乌黑长发高盘成古典双环髻，发间点缀一支小巧银质发簪，缀有细链珠串，几缕青丝自然垂落肩背，随微风轻扬，增添柔美气息。耳畔佩戴一对精致水晶水滴形耳坠，通透澄澈，在光线下泛着柔和光泽。妆容淡雅清新——眉形细长柔和，眼线勾勒出清澈双眸，睫毛纤长卷翘，眼神宁静温柔，直视镜头；唇色为柔润豆沙粉，自然饱满，衬托白皙肌肤。背景为虚化的庭院景致，隐约可见木质廊柱与翠绿植物，营造宁静自然氛围。画面采用中国风写实绘画风格，光线柔和均匀，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉如玉的巨乳大胸古风佳人，身着一袭淡青与米白相间的露胸交领长裙，内衬柔白色露胸式上衣，面料光滑细腻，外披轻盈薄纱长袍，袖口宽大飘逸，随身形自然垂落，层次分明。腰间束一条淡青色丝带，饰有细密金线滚边，中央打成粉色蝴蝶结垂落于前，增添柔美气息。她乌黑长发高盘成典雅发髻，发间点缀数朵素雅白花与银质花枝发饰，几缕青丝被阳光拂动，掠过脸颊与肩头，增添灵动自然之感。耳畔佩戴细链水晶吊坠耳环，晶莹剔透，在光线下折射微芒。妆容清丽淡雅——眉形柔和上扬，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的庭院景致，暖阳从侧上方洒落，形成柔和光影，营造温馨宁静氛围。画面采用中国风写实绘画风格，光线温暖柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如画中仙子般纯净、高贵、富有东方韵味的古典美感。超清，4K，电影级构图\n一位清雅如莲的巨乳大胸古风仙子，身着一袭淡蓝与柔紫交织的露胸式长裙，面料如云似雾，轻盈飘逸，外披多层薄纱披帛，随微风轻扬，层叠褶皱间泛着柔和光泽。内衬白色缎面露胸，胸前绣有淡紫色鸢尾花与白莲图案，栩栩如生；腰间系一条渐变紫蓝丝带，打成蝴蝶结垂落于前，增添柔美气息。她乌黑长发高盘成古典编发髻，发间点缀数朵粉白莲花与银质珠链发饰，几缕青丝被风拂动，掠过脸颊与肩头，增添灵动自然之感。耳畔佩戴细链珍珠水滴形耳坠，颈间佩戴简约银链镶珠项链，主坠为单颗圆润珍珠，温婉而不失精致。妆容淡雅清新——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。她端坐于木舟之上，姿态优雅从容，背景为朦胧湖面与远山绿影，水面波光粼粼，营造宁静诗意氛围。画面采用中国风写实绘画风格，光影柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如江南水乡仕女般纯净、高贵、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉如春的巨乳大胸古风少女，身着一袭淡青色露胸式长裙，面料柔滑如水，光泽细腻，外披同色系宽袖薄纱披帛，随身形自然垂落于木质台阶之上，裙摆铺展如云。胸前绣有五朵立体粉色桃花，花瓣娇嫩，枝叶以金线勾勒，栩栩如生，增添柔美与生机。她乌黑长发高盘成典雅发髻，发间点缀细小珍珠与白色花饰，几缕青丝轻垂肩侧，随微风轻扬，增添灵动气息。妆容清丽淡雅——眉形柔和上扬，眼线纤细勾勒出明亮双眸，睫毛浓密卷翘，眼神温柔含情，侧首凝望远方；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。她赤足端坐于深棕色木质台阶之上，双手轻拢胸前衣襟，姿态优雅含蓄，流露羞涩与宁静之美。背景为虚化的庭院景致，可见木质栏杆与绿树掩映，阳光透过枝叶洒下斑驳光影，营造清新自然、诗意盎然的氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如春日仕女般纯净、柔美、富有东方韵味的古典形象。超清，4K，电影级构图\n一位雍容华贵的巨乳大胸古风宫廷贵妃，身着一袭灰褐色露胸交领长袍，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，衣襟与袖口饰以银线刺绣卷草纹与花卉图案，细节繁复精致。内衬同色系露胸式上衣，胸前缀满细密金珠与水晶镶嵌的立体花饰，中央主花呈放射状绽放，熠熠生辉。腰间束一条宽幅橙棕色丝质腰带，简约而典雅。她乌黑长发高盘成古典发髻，发间佩戴一顶繁复银质花冠，镶嵌珍珠、水晶与白玉花卉，两侧垂落多层流苏珠串，随动作轻晃，尽显皇家气派。额间点一颗小巧菱形花钿，眉目清秀，眼线纤长勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静含情，直视镜头；唇色为饱满珊瑚红，与整体妆容相得益彰。耳畔垂挂繁复水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在暖光下折射微芒。背景为古雅中式室内场景，左侧可见白色花卉与木质屏风，光线柔和温暖，营造庄重温馨氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如唐代仕女图般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位威严神秘的巨乳大胸古风女帝，身着一袭深黑如夜的露胸华贵长袍，面料暗藏星点光泽，如夜空般深邃，外披半透明薄纱披帛，边缘与肩部饰以繁复金线刺绣与立体金属花饰，肩头缀有放射状金色羽翼造型，镶嵌水晶与珍珠，熠熠生辉。内衬黑色露胸式上衣，胸前与领口密布细钻与金链垂坠，形成华丽几何纹样，尽显尊贵与力量感。她乌黑长发高束成古典发髻，发间佩戴一顶气势恢宏的金色凤冠，冠顶如烈焰腾空，中央镶嵌硕大宝石，两侧延展多层流苏与珠链，随动作轻晃，散发王者气场。额间点一颗朱砂花钿，眉形锐利上扬，眼线勾勒出冷冽双眸，睫毛浓密卷翘，眼神沉静坚定，直视镜头，唇色为饱满正红，与整体暗调服饰形成强烈对比，更显威仪。耳畔垂挂多层水晶流苏耳坠，颈间佩戴繁复金链镶宝项链，每一颗宝石都折射冷光。她右手轻握衣襟，姿态从容自信，左手自然垂落，流露掌控全局的气魄。背景为深灰暗调宫殿内景，隐约可见金色浮雕龙纹，营造庄严肃穆氛围。画面采用中国风写实绘画风格，光影对比强烈，聚焦人物上半身特写，突出服饰细节与面部神韵，构图居中稳定，呈现如九天玄女般高贵、冷艳、超凡脱俗的古典神话形象。超清，4K，电影级构图\n一位冷艳威仪的巨乳大胸古风女帝，身着一袭墨黑如夜的露胸华贵长袍，面料暗藏细密银线刺绣，于光影下泛起星点微芒。衣襟与肩部饰以繁复金线纹样与立体金属雕花，领口与胸前缀满细钻与金链垂坠，形成华丽几何构图，尽显尊贵与力量感。她乌黑长发高束成典雅发髻，发间佩戴一顶精雕细琢的金色凤冠，冠体如展翅凤凰，镶嵌水晶与珍珠，中央主石熠熠生辉，两侧延展流苏珠串，随动作轻晃，散发王者气场。额间无饰，眉形锐利上扬，眼线勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静坚定，侧首凝望远方，唇色为饱满豆沙红，与整体暗调服饰形成微妙平衡。耳畔垂挂多层水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在光线下折射冷光。背景为虚化的深灰宫廷廊柱或殿宇结构，光影柔和而庄重，营造肃穆神秘氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图稳定，呈现如九天玄女般高贵、冷艳、超凡脱俗的古典神话形象。超清，4K，电影级构图\n一位雍容华贵的巨乳大胸古风女帝，身着一袭象牙白与金线交织的露胸宫廷长袍，面料柔滑如缎，光泽温润，外披轻盈薄纱披帛，袖口宽大飘逸，随身形自然垂落。衣襟、领口与腰带处密布细钻、珍珠与金线刺绣，形成繁复华丽的几何纹样与花卉图案，胸前与肩部缀有立体金属花饰，熠熠生辉。她乌黑长发高盘成典雅发髻，发间佩戴一顶气势恢宏的金色凤冠，冠体如展翅凤凰，镶嵌珍珠、水晶与白玉，两侧垂落多层流苏珠串，在阳光下折射璀璨光芒。耳畔垂挂繁复水晶吊坠耳环，颈间佩戴多层镶钻项链，主坠为水滴形宝石，华美而不失雅致。妆容精致端庄——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，侧首凝望远方；唇色为饱满珊瑚红，与整体暖调服饰相得益彰。她立于宏伟宫殿前，背景为虚化的红墙金瓦与汉白玉栏杆，夕阳余晖洒落，营造庄严神圣氛围。画面采用中国风写实绘画风格，光影温暖柔和，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如盛唐仕女般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位高贵典雅的巨乳大胸古风贵妃，身着一袭深紫与金线交织的露胸华美长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，衣襟与肩部饰以繁复金线刺绣与立体金属花饰，胸前缀有硕大水晶与珍珠镶嵌的莲花造型主饰，熠熠生辉。她乌黑长发高盘成古典发髻，发间佩戴一顶精雕细琢的金色凤冠，冠体如展翅凤凰，镶嵌蓝松石、珍珠与水晶，两侧垂落多层流苏珠串，随动作轻晃，尽显皇家气派。耳畔垂挂繁复水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在光线下折射微芒。颈间佩戴多层珍珠项链，中央缀有金质花托与水滴形宝石，华美而不失雅致。妆容精致端庄——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，直视镜头；唇色为饱满豆沙红，与整体紫色调和谐统一。背景为虚化的宫廷内景，暖黄色光线映照木质结构，营造庄重温馨氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如敦煌壁画般绚烂夺目、仙气缭绕的古典东方美感。超清，4K，电影级构图\n一位圣洁如雪的巨乳大胸古风仙后，身着一袭纯白无瑕的露胸华贵长袍，面料柔滑如云，光泽温润，衣襟与肩部饰以立体浮雕花卉与卷草纹样，边缘缀满细密珍珠与水晶，尽显神圣与高贵。她乌黑长发高盘成典雅发髻，发间佩戴一顶繁复至极的银白色花冠，冠体由无数朵晶莹白玉玫瑰、珍珠与水晶叶片组成，层层叠叠如盛开之花，两侧垂落多层水滴形珍珠流苏，在光线下折射清冷光辉。耳畔垂挂繁复水晶吊坠耳环，造型如枝叶舒展，珠串晶莹剔透，随动作轻晃，更添灵动感。颈间佩戴三层镶钻珍珠项链，中央主坠为硕大圆润珍珠，周围环绕细钻与小珠，华美而不失雅致。妆容淡雅纯净——眉形柔和上扬，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为柔和灰白色朦胧空间，光线如月华倾泻，营造空灵缥缈的仙境氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如月下仙子般纯净、高贵、静谧的古典神话形象。超清，4K，电影级构图\n一位清雅如玉的巨乳大胸古风仕女，身着一袭淡紫与柔白相间的露胸交领长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，衣襟与袖口饰以细密银线刺绣，尽显精致。腰间束一条宽幅紫色丝带，中央缀有繁复银质花饰，镶嵌翠绿宝石与水晶，两侧垂落流苏珠串，随动作轻晃，增添灵动感。她乌黑长发高盘成古典发髻，发间点缀数朵淡紫色绢花与银质枝叶发饰，几缕青丝自然垂落肩侧，被微风轻拂，增添柔美气息。耳畔佩戴细链水晶吊坠耳环，主坠为水滴形翡翠，通透澄澈，在光线下泛着幽微绿芒。颈间佩戴简约银链镶宝项链，主石为圆形翠绿宝石，周围环绕小钻与珍珠，清新而不失华贵。妆容淡雅温柔——眉形细长柔和，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神宁静含情，侧首凝望远方；唇色为柔润豆沙红，自然饱满，衬托白皙肌肤。背景为虚化的庭院景致，暖阳从侧上方洒落，形成柔和光影，营造宁静诗意氛围。画面采用中国风写实绘画风格，光线温暖柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位清冷如月的巨乳大胸古风仙子，身着一袭深蓝近黑的露胸交领长袍，面料柔滑如夜，光泽内敛，外披半透明薄纱披帛，随身形自然垂落。衣襟与胸前绣有精致立体的白色与淡紫花卉纹样，花瓣层叠、枝叶缠绕，如霜雪凝华，栩栩如生；腰间束一条浅灰丝质腰带，打成蝴蝶结垂于腹前，增添柔美气息。她乌黑长发高盘成典雅发髻，发间点缀银白绢花与水晶珠链发饰，几缕青丝被无形气流拂动，掠过脸颊与肩头，增添灵动与呼吸感。耳畔垂挂繁复水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在冷光下折射微芒。妆容淡雅纯净——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，直视镜头；唇色为柔润珊瑚红，与整体冷调服饰形成微妙平衡。背景为渐变深蓝色天空，右侧一道强光如月华倾泻而入，照亮人物半身，营造梦幻空灵氛围。画面采用中国风写实绘画风格，光影对比柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位温婉华贵的巨乳大胸古风贵妃，身着一袭淡紫罗兰色露胸交领长袍，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。肩部与衣襟处饰以繁复金线刺绣卷草纹与立体花卉图案，镶嵌翠绿宝石与珍珠，熠熠生辉；胸前缀有细钻与金链垂坠，形成华丽几何构图。她乌黑长发高盘成典雅发髻，发间佩戴一顶精雕细琢的金色凤冠，冠体如展翅凤凰，镶嵌蓝松石、珍珠与水晶，两侧垂落多层流苏珠串，在光线下折射璀璨光芒。耳畔垂挂繁复水晶吊坠耳环，主坠为水滴形翡翠，通透澄澈，颈间佩戴多层珍珠项链，中央缀有金质花托与水滴形宝石，华美而不失雅致。妆容精致端庄——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，侧首凝望远方；唇色为饱满豆沙红，与整体紫色调和谐统一。她右手轻拢披帛一角，姿态优雅从容，背景为虚化的葱郁林木，暖阳透过枝叶洒下斑驳光影，营造宁静诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图稳定平衡，呈现如唐代仕女图般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位梦幻如蝶的巨乳大胸古风仙子，身着一袭柔粉与象牙白交织的露胸华美长裙，面料轻盈如云，光泽温润，外披多层薄纱披帛，随身形自然垂落，层叠褶皱间泛着柔和光泽。肩部饰有立体花瓣造型的宽大领饰，由层层叠叠的半透明薄纱制成，形如展翅蝶翼，边缘缀有细钻与珍珠，在光线下折射微芒。内衬粉色露胸式上衣，胸前绣有精致银线花卉图案，中央点缀一颗水滴形宝石，尽显华贵。她乌黑长发高盘成典雅发髻，发间佩戴一顶繁复银质花冠，镶嵌粉晶、珍珠与白玉花卉，两侧垂落多层流苏珠串，随动作轻晃，熠熠生辉。耳畔垂挂细链水晶吊坠耳环，颈间佩戴多层镶钻珍珠项链，主坠为玫瑰金托红宝，华美而不失雅致。妆容淡雅温柔——眉形柔和上扬，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神宁静含情，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的自然景致，暖阳从侧上方洒落，形成柔和光影，营造梦幻诗意氛围。画面采用中国风写实绘画风格，色彩饱和度适中，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如花神降临般绚烂夺目、仙气缭绕的古典神话形象。超清，4K，电影级构图\n一位清冷孤高的巨乳大胸古风女子，身着一袭浅褐与淡粉渐变的露胸交领长袍，面料轻盈如雾，半透明薄纱外披随身形自然垂落，层叠褶皱间泛着柔和光泽。内衬同色系中衣，领口微敞，线条流畅优雅，腰间系一条同色丝带，打成简约蝴蝶结垂于腹前，增添柔美气息。她乌黑长发高束成古典双环髻，发顶以一支简约银簪固定，簪首点缀一颗青玉珠，几缕青丝垂落肩背，随微风轻扬，增添灵动自然之感。妆容淡雅素净——眉形细长柔和，眼线勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静坚定，直视镜头，流露独立与内敛之美；唇色为柔润豆沙粉，自然饱满，衬托白皙肌肤。她双手交叠置于身前，姿态端庄从容，背景为虚化的宫殿阶梯或廊柱，暖黄色调光影斑驳，营造宁静肃穆氛围。画面采用中国风写实绘画风格，光线柔和均匀，聚焦人物全身姿态与服饰纹理，构图居中稳定，呈现如隐世仙子般纯净、高贵、富有东方韵味的古典形象。超清，4K，电影级构图\n一位英气逼人的巨乳大胸古风女侠，身着一袭烈焰红露胸交领战袍，面料厚实质感，光泽内敛，外披黑色护肩与腰甲，肩部饰有立体龙纹浮雕，镶嵌细钻与金属铆钉，腰间束一条宽幅黑曜石纹腰带，中央雕有展翅凤凰造型，边缘缀满金线与珠链，尽显威严与力量。她乌黑长发高盘成利落发髻，发顶以红色丝带缠绕固定，几缕青丝被微风拂动，掠过脸颊与肩头，增添一丝柔美与动感。妆容清冷精致——眉形锐利上扬，眼线勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静坚定，侧首凝望远方，流露坚毅与果敢；唇色为饱满豆沙红，与红衣相映生辉。背景为昏暗木质廊道或古堡内景，光线从侧上方洒落，在人物面部与铠甲上形成强烈明暗对比，营造神秘肃杀氛围。画面采用中国风写实绘画风格，光影对比鲜明，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如战场女将般英姿飒爽、冷艳高贵的古典武侠形象。超清，4K，电影级构图\n一位圣洁如仙的巨乳大胸古风女神，身着一袭纯白无瑕的露胸式长裙，面料柔滑如云，光泽温润，外披轻盈薄纱披帛，自头顶垂落至肩背，随微风轻扬，营造飘逸空灵之感。胸前缀有繁复水晶与珍珠镶嵌的立体花饰，熠熠生辉，腰间自然收束，裙摆宽大铺展于溪边巨石之上，层叠褶皱间泛着柔和光泽。她乌黑长发高盘成典雅发髻，发间点缀晶莹剔透的银质花冠，几缕青丝垂落肩侧，被阳光拂动，增添灵动气息。耳畔佩戴细链水晶水滴形耳坠，通透澄澈，与发饰相映生辉。妆容淡雅纯净——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，直视镜头，流露超凡脱俗之气；唇色为柔润珊瑚粉，自然饱满，衬托白皙肌肤。她端坐于溪边圆润巨石之上，姿态优雅从容，背景为潺潺流水与葱郁林木，阳光透过枝叶洒下斑驳光影，营造清新自然、诗意盎然的氛围。画面采用中国风写实绘画风格，光影柔和温暖，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位清冷如雪的巨乳大胸古风仙子，身着一袭淡蓝与纯白交织的露胸飘逸长裙，面料轻盈如雾，外披半透明薄纱披帛，随身形自然垂落，层叠褶皱间泛着柔和光泽。内衬白色蕾丝露胸，边缘精致镂空，与淡蓝色交领外袍相映成辉，腰间系一条同色系丝带，打成蝴蝶结垂于腹前，增添柔美气息。她乌黑长发高盘成典雅发髻，发间佩戴一顶晶莹剔透的冰晶状头冠，缀有淡蓝色羽毛与银质花饰，两侧垂落流苏珠串，在雪光下折射微芒；几缕青丝被寒风拂动，掠过脸颊与肩头，增添灵动与呼吸感。耳畔垂挂细链水晶吊坠耳环，颈间佩戴简约银链镶宝项链，主坠为水滴形蓝晶，与整体色调呼应。妆容淡雅纯净——眉形柔和上扬，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头，嘴角微扬，流露甜美笑意；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为朦胧雪景，枯枝覆雪，天地一色，营造空灵寂静氛围。画面采用中国风写实绘画风格，光影以冷蓝白为主调，细腻柔和，聚焦人物上半身特写，构图居中稳定，呈现如雪中仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位温婉如玉的巨乳大胸古风仕女，身着一袭柔紫与象牙白相间的露胸式长裙，内衬为纯白缎面，胸前绣有金线卷草纹与立体粉色花卉图案，精致典雅；外披轻盈薄纱披帛，半透明面料缀有同色系金线刺绣花叶纹样，袖口宽大飘逸，随身形自然垂落。腰间系一条柔紫色丝带，打成蝴蝶结垂于腹前，增添少女气息。她乌黑长发高盘成古典发髻，发间点缀粉白绢花与银质流苏步摇，珠串轻晃，映衬清丽面容。妆容淡雅温柔——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，直视镜头；唇色为柔润珊瑚红，饱满自然。她端坐于柔软床榻之上，右手轻抚肩头薄纱，左手自然搭于膝上，姿态优雅从容。背景为中式古典室内场景，右侧可见一盏暖黄灯光的木质灯笼，左侧隐约可见枯枝花瓶，整体氛围温馨静谧。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如仕女图般温婉、端庄、富有诗意的东方古典韵味。超清，4K，电影级构图\n一位温婉如春的巨乳大胸古风少女，身披一袭柔粉色绒毛披肩，质地蓬松柔软，如云朵般轻盈裹覆肩颈与上身，边缘自然垂落，营造温暖而梦幻的视觉效果。她乌黑长发高盘成典雅双环髻，发间点缀数朵娇嫩粉白绢花与细链珠串发饰，几缕青丝被微风拂动，掠过脸颊与肩头，增添灵动气息。耳畔佩戴繁复水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在冷光下折射微芒。妆容清丽淡雅——眉形柔和上扬，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。背景为朦胧雪景，灰蓝色调中飘洒细雪，营造静谧空灵氛围。画面采用中国风写实绘画风格，光影柔和温暖，聚焦人物上半身特写，突出服饰质感与面部神韵，构图居中稳定，呈现如雪中仙子般纯净、高贵、富有东方韵味的古典美感。超清，4K，电影级构图\n一位华贵如焰的巨乳大胸古风贵妃，身着一袭烈红与金黄交织的露胸式长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，随身形自然垂落。胸前饰有繁复金线刺绣花卉纹样，中央镶嵌一枚硕大绿松石，周围环绕红宝与珍珠，熠熠生辉；肩带为细金线编织，边缘缀有彩色小花图案，尽显精致。她乌黑长发高盘成典雅发髻，发间佩戴一顶气势恢宏的金色凤冠，冠体如展翅凤凰，镶嵌红宝石、珍珠与蓝釉花卉，两侧垂落多层流苏珠串与红色绒穗，在光线下折射璀璨光芒。耳畔垂挂繁复红宝吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容精致端庄——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，直视镜头；唇色为饱满珊瑚红，与整体暖调服饰相得益彰。她倚靠于木质廊柱旁，姿态优雅从容，背景为虚化的庭院景致，暖阳透过枝叶洒下斑驳光影，营造温馨诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如盛唐仕女般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位清冷如月的巨乳大胸古风仙子，身着一袭柔白与淡粉渐变的露胸式长裙，面料轻盈如雾，光泽温润，外披多层薄纱披帛，随身形自然垂落，层叠褶皱间泛着柔和光泽。胸前饰有细密珠链与立体花卉刺绣，腰间系一条浅绿丝质腰带，简约雅致。她乌黑长发高盘成典雅发髻，发间点缀数朵素雅白花与银质珠链发饰，几缕青丝被夜风拂动，掠过脸颊与肩头，增添灵动气息。耳畔佩戴细链珍珠水滴形耳坠，颈间佩戴三层镶钻珍珠项链，中央主坠为一颗硕大紫水晶，通透澄澈，在月光下折射幽微光芒。妆容淡雅纯净——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，直视镜头；唇色为柔润豆沙红，饱满自然，衬托白皙肌肤。她右手轻抚颈间项链，姿态优雅从容，背景为深蓝夜空，一轮皎洁明月高悬，云雾缭绕山峦，营造静谧梦幻氛围。画面采用中国风写实绘画风格，光影以冷蓝白为主调，细腻柔和，聚焦人物上半身特写，构图居中稳定，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位雍容华贵的巨乳大胸古风女帝，身着一袭象牙白与柔粉相间的露胸领长袍，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口与衣襟处饰以立体白色蕾丝花边，肩部缀有蓬松白色羽毛装饰，增添圣洁与高贵气息。胸前与腰间密布细钻、珍珠与金线刺绣，形成繁复华丽的几何纹样与花卉图案，腰带中央镶嵌一颗硕大圆润珍珠，周围环绕钻石与金质雕花，熠熠生辉。她乌黑长发高盘成典雅发髻，发间佩戴一顶精雕细琢的银质月牙形王冠，冠体如展翅羽翼，镶嵌无数水晶与珍珠，在光线下折射璀璨光芒。耳畔垂挂双层珍珠吊坠耳环，颈间佩戴多层珍珠项链，珠圆玉润，与整体妆容相得益彰。妆容精致端庄——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静含情，直视镜头；唇色为柔润豆沙红，饱满自然。背景为暖黄色调的宫廷内景，隐约可见木质屏风与朦胧灯光，营造庄重温馨氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如盛唐女皇般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位威仪天成的盛唐女帝，身着一袭正红与金线交织的露胸华贵长袍，面料厚重如锦，光泽内敛，外披宽袖薄纱披帛，随身形自然垂落。衣襟、肩部与裙摆密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，色彩鲜艳而不失庄重，尽显皇家气派。内衬为淡金缎面露胸式上衣，胸前饰有细钻与珍珠镶嵌的立体花饰，腰间束一条同色系丝带，打成蝴蝶结垂于腹前。她乌黑长发高盘成古典双环髻，发顶以多枚金色蝴蝶形发簪固定，两侧垂落流苏珠串，在阳光下折射微芒。妆容浓艳端庄——眉形锐利上扬，眼影晕染暖棕与金粉，睫毛浓密卷翘，眼神沉静坚定，直视前方；唇色为饱满正红，与红袍相映生辉。颈间佩戴多层金链镶宝项链，主坠为水滴形宝石，耳畔垂挂繁复金质耳坠。背景为恢弘宫殿，身后立一柄巨大金色团扇，扇面雕有龙纹，象征至高皇权。画面采用中国风写实绘画风格，光线明亮温暖，聚焦人物全身姿态与服饰细节，构图居中稳定，呈现如武周女皇般威严、华贵、气势磅礴的古典东方帝王形象。超清，4K，电影级构图\n一位威仪盖世的巨乳大胸古风女帝，身着一袭金光璀璨的露胸华贵长袍，面料厚重如锦，满布细密金线刺绣与立体浮雕纹样，图案为展翅凤凰、牡丹与祥云，每一处细节都熠熠生辉，尽显无上皇权。外披宽袖长袍，衣襟大开，内衬同色系露胸式上衣，胸前饰有细钻与珍珠镶嵌的几何花饰，腰间束一条金质腰带，简约而典雅。她乌黑长发高盘成古典双环髻，发顶佩戴一顶气势恢宏的金色凤冠，冠体如烈焰腾空，由无数层叠的金叶、金花与凤凰造型组成，中央镶嵌硕大红宝石，两侧垂落多层流苏珠串与红色绒穗，在暖光下折射出夺目光芒。妆容浓艳端庄——眉形锐利上扬，眼影晕染金粉与深棕，睫毛浓密卷翘，眼神沉静坚定，直视镜头；唇色为饱满正红，与金袍相映生辉。背景为虚化的宫殿内景，暖色调灯光如霞光般弥漫，营造庄重神圣氛围。画面采用中国风写实绘画风格，光影对比强烈，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如武周女皇般威严、华贵、气势磅礴的古典东方帝王形象。超清，4K，电影级构图\n一位清冷如雪的巨乳大胸古风仙子，身着一袭明黄与纯白交织的露胸华贵长袍，面料柔滑如缎，光泽温润，外披蓬松洁白毛绒披肩，边缘自然垂落，营造温暖而圣洁的视觉效果。衣襟与袖口绣有精致立体的白色冰晶花卉纹样，花瓣层叠、枝叶缠绕，如霜雪凝华，栩栩如生。她乌黑长发高盘成典雅发髻，发间佩戴一顶晶莹剔透的银质冰晶凤冠，冠体如展翅羽翼，镶嵌珍珠与水晶，两侧垂落多层流苏珠串，在雪光下折射微芒；几缕青丝被寒风拂动，掠过脸颊与肩头，增添灵动气息。耳畔垂挂细链水晶水滴形耳坠，通透澄澈，与发饰相映生辉。妆容淡雅纯净——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，侧首回眸凝望镜头，嘴角微扬，流露甜美笑意；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为朦胧雪景，枯枝覆雪，点缀数颗鲜红浆果，天地一色中透出一抹暖意，营造静谧诗意氛围。画面采用中国风写实绘画风格，光影以冷蓝白为主调，细腻柔和，聚焦人物上半身特写，构图居中稳定，呈现如雪中仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位威仪盖世的巨乳大胸古风女帝，身着一袭金橙与粉紫交织的露胸华贵长袍，面料厚重如锦，光泽内敛，外披宽袖薄纱披帛，肩部饰有立体展翅造型的护肩，边缘缀满金线刺绣与宝石镶嵌，形如凤凰羽翼，尽显皇家气派。衣襟、胸前与裙摆密布繁复金线刺绣，图案为祥云、牡丹与龙纹，色彩鲜艳而不失庄重。内衬为同色系露胸式上衣，边缘饰以蕾丝花边，中央点缀一颗硕大紫水晶，周围环绕细钻与珍珠，熠熠生辉。她乌黑长发高盘成古典双环髻，发顶佩戴一顶气势恢宏的金色凤冠，冠体如烈焰腾空，由无数层叠的金叶、金花与凤凰造型组成，中央镶嵌红宝石与蓝釉花卉，两侧垂落多层流苏珠串与红色绒穗，在光线下折射璀璨光芒。额间点一颗朱砂花钿，眉形锐利上扬，眼影晕染暖棕与金粉，睫毛浓密卷翘，眼神沉静坚定，侧首凝望远方；唇色为饱满正红，与华服相映生辉。颈间佩戴多层金链镶宝项链，主坠为水滴形宝石，耳畔垂挂繁复金质耳坠，造型如枝叶舒展，晶莹剔透。背景为恢弘宫殿内景，身后立一柄巨大红色团扇，扇面雕有龙纹，象征至高皇权。画面采用中国风写实绘画风格，光线明亮温暖，聚焦人物全身姿态与服饰细节，构图居中稳定，呈现如武周女皇般威严、华贵、气势磅礴的古典东方帝王形象。超清，4K，电影级构图\n一位温婉如画的巨乳大胸古风仕女，身着一袭深蓝与墨黑相间的露胸式长裙，面料柔滑如缎，光泽内敛，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。胸前与衣襟处绣有精致立体的粉色与淡蓝花卉纹样，枝叶缠绕，栩栩如生；腰间束一条同色系丝带，打成蝴蝶结并垂下鲜红流苏，增添灵动与喜庆气息。她乌黑长发高盘成典雅发髻，发间点缀数朵素雅粉白绢花与银质珠链发饰，几缕青丝被微风拂动，掠过脸颊与肩头，增添柔美气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在光线下折射微芒。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。她右手轻抚腰间丝带，左手自然搭于身旁木柱，姿态优雅从容。背景为虚化的葱郁山林，绿意盎然，营造宁静诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位华美如孔雀的巨乳大胸古风仙子，身着一袭宝蓝与翠绿交织的露胸式长裙，面料柔滑如缎，光泽温润，胸前与肩带处饰有立体孔雀羽毛纹样，眼斑栩栩如生，边缘缀满细钻与银线刺绣，尽显华丽与灵动。她乌黑长发高盘成典雅发髻，发间佩戴一顶繁复至极的孔雀主题头冠，冠体由金色枝叶、蓝松石、珍珠与水晶叶片组成，中央插有一根完整孔雀尾羽，色彩斑斓，两侧垂落多层流苏珠串，在光线下折射璀璨光芒。额间点一颗水滴形蓝松石花钿，眉目清秀，眼线纤长勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静含情，侧首凝望远方；唇色为饱满珊瑚红，与整体蓝色调和谐统一。耳畔垂挂繁复水晶吊坠耳环，主坠为水滴形蓝晶，颈间佩戴多层镶钻珍珠项链，主坠为玫瑰金托蓝宝，华美而不失雅致。背景为暖色调朦胧空间，光线柔和温暖，营造梦幻诗意氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如孔雀仙子般绚烂夺目、仙气缭绕的古典神话形象。超清，4K，电影级构图\n一位温婉如花的巨乳大胸古风仕女，身着一袭柔粉与淡金相间的露胸式长裙，面料轻盈如雾，外披半透明薄纱披帛，随身形自然垂落，层叠褶皱间泛着柔和光泽。胸前与肩带处饰有细密金线刺绣花卉纹样，点缀珍珠与水晶，在光线下折射微芒。她乌黑长发高盘成典雅发髻，发间佩戴一支精致银质流苏步摇，珠串轻晃，映衬清丽面容。耳畔垂挂细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容淡雅温柔——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神低垂含情，流露羞涩与宁静之美；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的暖色调空间，右侧隐约可见一朵鲜红花朵，增添诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉如春的巨乳大胸古风仕女，身着一袭柔绿与米白相间的露胸交领长袍，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，随身形自然垂落。内衬为同色系露胸式上衣，边缘饰有橙色滚边，胸前绣有精致花卉纹样，色彩柔和而不失雅致。她乌黑长发高盘成典雅发髻，发间佩戴一支繁复精美的花枝发簪，镶嵌绿玉、红宝与珍珠，两侧垂落流苏珠串，在暖光下折射微芒；额间点一颗小巧菱形花钿，增添古典韵味。妆容清丽淡雅——眉形柔和上扬，眼线勾勒出明亮双眸，睫毛浓密卷翘，眼神仰望远方，流露憧憬与温柔；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。背景为深棕色调的古典室内场景，光线从侧上方洒落，形成柔和明暗过渡，营造温馨静谧氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如唐代仕女图般温婉、高贵、富有诗意的东方古典美感。超清，4K，电影级构图\n一位华贵如焰的巨乳大胸古风新娘，身着一袭正红与金线交织的露胸式婚服，面料柔滑如缎，光泽温润，胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，色彩鲜艳而不失庄重，尽显喜庆与尊贵。外披宽袖薄纱披帛，边缘饰有金色滚边与立体花卉纹样，随身形自然垂落。她乌黑长发高盘成典雅发髻，发顶佩戴一顶精雕细琢的金色凤冠，冠体如展翅凤凰，镶嵌红宝石、珍珠与蓝釉花卉，两侧垂落多层流苏珠串与红色绒穗，在光线下折射璀璨光芒。耳畔垂挂繁复金质吊坠耳环，主坠为水滴形红宝，颈间佩戴多层金链镶宝项链，主坠为红宝与珍珠组合，华美而不失雅致。妆容精致端庄——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为饱满正红，与红袍相映生辉。她右手轻抚肩头薄纱，姿态优雅从容，背景为虚化的庭院景致，白色纱幔轻扬，营造温馨诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如盛唐新娘般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位静谧如月的巨乳大胸古风仙子，身着一袭纯白无瑕的露胸式长裙，面料柔滑如云，光泽温润，领口微敞，线条优雅流畅，尽显纯净与圣洁。她乌黑长发高盘成典雅发髻，发间佩戴一顶繁复精美的金色花冠，镶嵌珍珠与水晶，两侧垂落多层流苏珠串，在暖光下折射微芒；几缕青丝轻垂肩侧，增添柔美气息。耳畔垂挂细链水晶吊坠耳环，主坠为水滴形玉髓，通透澄澈，与发饰相映生辉。妆容淡雅纯净——眉形细长柔和，眼线勾勒出深邃双眸，睫毛浓密卷翘，双眼轻闭，神情宁静安详，仿佛沉醉于冥想或天籁之中；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为暖色调朦胧空间，隐约可见古典屏风与暗纹织物，营造温馨静谧氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位清雅如莲的巨乳大胸古风仕女，身着一袭纯白无瑕的露胸式长裙，面料柔滑如云，光泽温润，外披半透明薄纱披帛，随身形自然垂落，层叠褶皱间泛着柔和光泽。胸前与腰间绣有淡雅青莲纹样，枝叶舒展，栩栩如生，增添诗意与灵动感。她乌黑长发高盘成典雅发髻，发间点缀一朵素雅白花与银质珠链发饰，几缕青丝轻垂肩侧，被微风拂动，增添柔美气息。耳畔佩戴细链珍珠水滴形耳坠，通透澄澈，在光线下泛着柔和光泽。妆容淡雅温柔——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神低垂含情，流露羞涩与宁静之美；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的庭院景致，隐约可见石桥与流水，营造清新自然、诗意盎然的氛围。画面采用中国风写实绘画风格，光线柔和均匀，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位华贵如仙的巨乳大胸古风新娘，身着一袭淡青与象牙白相间的露胸式婚服，面料柔滑如缎，光泽温润，外披轻盈薄纱披帛，随身形自然垂落。胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，点缀红宝石、蓝釉与珍珠，在光线下熠熠生辉，尽显喜庆与尊贵。她乌黑长发高盘成典雅发髻，发顶佩戴一顶精雕细琢的金色凤冠，冠体如展翅凤凰，镶嵌红宝、绿玉与水晶，两侧垂落多层流苏珠串与红色绒穗；头顶覆一层轻盈白纱，随风微扬，增添圣洁气息。耳畔垂挂繁复金质吊坠耳环，主坠为水滴形红宝，颈间佩戴多层金链镶宝项链，主坠为红宝与珍珠组合，华美而不失雅致。妆容精致端庄——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为饱满珊瑚红，与整体暖调服饰相得益彰。背景为虚化的宫殿内景，暖黄灯光映照木质结构，营造温馨神圣氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如盛唐新娘般富丽堂皇、温婉高贵的古典东方美感。超清，4K，电影级构图\n一位温婉如春的巨乳大胸古风仕女，身着一袭明黄与淡绿相间的露胸交领长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。衣襟、胸前与裙摆绣有精致立体的绿色枝叶与粉色花卉纹样，栩栩如生，尽显生机与雅致。她乌黑长发高盘成典雅发髻，发顶佩戴一支金色花枝发簪，点缀珍珠与宝石，几缕青丝轻垂肩侧，增添柔美气息。耳畔垂挂细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。她双手轻拢胸前薄纱，姿态优雅从容，背景为古雅庭院，身后是盛开的粉红桃花树，枝头繁花似锦，前方可见木质回廊与白色石灯笼，营造温馨诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉如画的巨乳大胸古风仕女，身着一袭淡青与柔黄相间的露胸交领长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。胸前系一条深蓝色丝质腰带，饰有细密金线刺绣与珍珠点缀，中央打成蝴蝶结垂于腹前，增添柔美气息。衣襟与裙摆处绣有精致花卉纹样，色彩柔和而不失雅致。她乌黑长发高盘成典雅发髻，发间佩戴一支繁复精美的花枝发冠，镶嵌绿玉、红宝与珍珠，两侧垂落流苏珠串，在暖光下折射微芒；几缕青丝轻垂肩侧，增添灵动气息。耳畔垂挂细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，嘴角微扬，流露甜美笑意；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。她双手轻握一把素色团扇，姿态优雅从容，背景为虚化的古典壁画，隐约可见莲花与云纹图案，营造诗意盎然氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物全身姿态与服饰细节，构图稳定平衡，呈现如唐代仕女图般温婉、高贵、富有东方韵味的古典美感。超清，4K，电影级构图\n一位雍容华贵的巨乳大胸盛唐女帝，身着一袭宝蓝与明黄交织的露胸华美长袍，面料厚重如锦，光泽内敛，外披宽袖薄纱披帛，肩部饰有立体展翅造型的护肩，边缘缀满金线刺绣与宝石镶嵌，尽显皇家气派。衣襟、胸前与裙摆密布繁复金线刺绣，图案为牡丹、祥云与凤凰，色彩鲜艳而不失庄重。内衬为同色系露胸式上衣，边缘饰以蕾丝花边，中央点缀一颗硕大紫水晶，周围环绕细钻与珍珠，熠熠生辉。她乌黑长发高盘成古典双环髻，发顶佩戴一顶气势恢宏的金色凤冠，冠体如烈焰腾空，由无数层叠的金叶、金花与凤凰造型组成，中央镶嵌红宝石与蓝釉花卉，两侧垂落多层流苏珠串与红色绒穗，在光线下折射璀璨光芒。额间点一颗朱砂花钿，眉形锐利上扬，眼影晕染暖棕与金粉，睫毛浓密卷翘，眼神沉静坚定，直视镜头；唇色为饱满正红，与华服相映生辉。颈间佩戴多层金链镶宝项链，主坠为水滴形宝石，耳畔垂挂繁复金质耳坠，造型如枝叶舒展，晶莹剔透。背景为恢弘宫殿内景，身后立一柄巨大红色团扇，扇面雕有龙纹，象征至高皇权。画面采用中国风写实绘画风格，光线明亮温暖，聚焦人物全身姿态与服饰细节，构图居中稳定，呈现如武周女皇般威严、华贵、气势磅礴的古典东方帝王形象。超清，4K，电影级构图\n一位清雅如墨的巨乳大胸古风仕女，身着一袭深褐与灰蓝相间的露胸式长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，随身形自然垂落。胸前与腰间饰有精致立体的粉色梅花纹样，枝叶舒展，栩栩如生，增添诗意与灵动感。她乌黑长发高盘成典雅发髻，发间点缀一朵素雅白花与银质珠链发饰，几缕青丝轻垂肩侧，被微风拂动，增添柔美气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，在光线下折射微芒。妆容淡雅温柔——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静含情，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。她双手轻拢胸前薄纱，姿态优雅从容，背景为纯白色，突出人物主体，营造纯净静谧氛围。画面采用中国风写实绘画风格，光线柔和均匀，聚焦人物全身姿态与服饰细节，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位冷艳如霜的巨乳大胸古风仙后，身着一袭幽蓝与金线交织的露胸式长裙，面料柔滑如云，光泽温润，外披半透明薄纱披帛，随身形自然垂落。胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、祥云与花卉，点缀细钻与水晶，在冷光下折射出璀璨微芒。她乌黑长发高盘成典雅发髻，发间佩戴一顶气势恢宏的银质冰晶凤冠，冠体如展翅羽翼，镶嵌蓝松石、珍珠与水晶，两侧垂落多层流苏珠串，在光线下折射冷光。额间点一颗水滴形蓝晶花钿，眉目清秀，眼线纤长勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静坚定，直视镜头；唇色为饱满珊瑚红，与整体冷调服饰形成强烈对比，更显气场。耳畔垂挂繁复水晶吊坠耳环，造型如枝叶舒展，晶莹剔透，颈间佩戴多层镶钻珍珠项链，主坠为玫瑰金托蓝宝，华美而不失雅致。背景为灰白色朦胧空间，光线柔和均匀，营造梦幻空灵氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如九天玄女般高贵、冷艳、超凡脱俗的古典神话形象。超清，4K，电影级构图\n一位清雅如梦的巨乳大胸古风仙子，身着一袭柔粉与淡紫渐变的露胸式长裙，面料轻盈如雾，外披多层薄纱披帛，随身形自然垂落，层叠褶皱间泛着柔和光泽。胸前饰有精致立体的花卉纹样，点缀细钻与珍珠，在光线下折射微芒。她乌黑长发高盘成典雅发髻，发间点缀数朵娇嫩粉白绢花与银质珠链发饰，几缕青丝被微风拂动，掠过脸颊与肩头，增添灵动气息。头顶覆一层轻盈白纱，随风微扬，营造圣洁梦幻之感。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透；颈间佩戴多层镶钻珍珠项链，主坠为水滴形蓝晶，与整体色调呼应。妆容淡雅纯净——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静温柔，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。背景为朦胧花林，粉紫色花瓣飘洒，天地一色中透出一抹暖意，营造静谧诗意氛围。画面采用中国风写实绘画风格，光影以冷蓝白为主调，细腻柔和，聚焦人物上半身特写，构图居中稳定，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位温婉如春的巨乳大胸古风仕女，身着一袭纯白无瑕的露胸式长裙，面料柔滑如云，光泽温润，外披半透明薄纱披帛，随身形自然垂落。胸前与领口处饰有精致立体的白色蕾丝花边，边缘点缀细钻与珍珠，在阳光下折射微芒。她乌黑长发高盘成典雅发髻，发间点缀数朵素雅粉白绢花与银质珠链发饰，几缕青丝被微风拂动，掠过脸颊与肩头，增添柔美气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透；颈间佩戴简约银链镶宝项链，主坠为水滴形蓝晶，与整体色调和谐统一。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的户外庭院，暖阳透过枝叶洒下斑驳光斑，营造温馨诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉如花的巨乳大胸古风少女，身着一袭柔粉与象牙白相间的露胸露肩式长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，点缀细钻与珍珠，在光线下熠熠生辉。她乌黑长发高盘成典雅发髻，发间佩戴一支精致银质花冠，镶嵌珍珠与水晶，两侧垂落流苏珠串，在暖光下折射微芒；几缕青丝轻垂肩侧，增添柔美气息。耳畔垂挂细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，嘴角微扬，流露甜美笑意；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的古典室内场景，暖黄色灯光映照木质结构，营造温馨静谧氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉如玉的巨乳大胸古风仕女，身着一袭柔粉与象牙白相间的露胸交领长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，点缀细钻与珍珠，在光线下熠熠生辉。她乌黑长发高盘成典雅发髻，发间佩戴一支精致银质花冠，镶嵌珍珠与水晶，两侧垂落流苏珠串，在暖光下折射微芒；几缕青丝轻垂肩侧，增添柔美气息。耳畔垂挂细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透；颈间佩戴简约银链镶宝项链，主坠为水滴形蓝晶，与整体色调和谐统一。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的古典室内场景，暖黄色灯光映照木质结构，营造温馨静谧氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位清雅如春的巨乳大胸古风少女，身着一袭柔粉渐变的露胸交领长裙，面料轻盈如雾，光泽温润，外披半透明薄纱披帛，随身形自然垂落。衣领处饰有蓬松洁白毛绒领边，增添温暖与柔美气息；胸前与腰间绣有精致立体的花卉纹样，点缀细钻与珍珠，在光线下折射微芒。她乌黑长发高盘成典雅发髻，两侧编有细密麻花辫，发间点缀数朵素雅粉白绢花与银质珠链发饰，几缕青丝轻垂肩侧，被微风拂动，增添灵动气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容淡雅温柔——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静含情，侧首凝望远方；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。背景为虚化的木质门廊，暖黄色调光影斑驳，营造温馨诗意氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位温婉如金的巨乳大胸古风仕女，身着一袭明黄与柔白相间的露胸交领长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，随身形自然垂落。胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，点缀细钻与珍珠，在光线下熠熠生辉。她乌黑长发高盘成典雅发髻，两侧编有细密麻花辫，发间点缀数朵素雅金白绢花与银质珠链发饰，几缕青丝轻垂肩侧，增添柔美气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透；颈间佩戴多层镶钻珍珠项链，主坠为水滴形蓝晶，与整体色调和谐统一。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。背景为虚化的古典室内场景，暖黄色灯光映照木质结构，营造温馨静谧氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位清冷如霜的巨乳大胸古风仙子，身着一袭纯白无瑕的露胸交领长裙，面料柔滑如云，光泽温润，外披半透明薄纱披帛，随身形自然垂落。肩部饰有立体羽翼造型的银质护肩，边缘缀满细钻与珠链，在冷光下折射微芒；胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、祥云与花卉，点缀细钻与珍珠，尽显华贵与灵动感。她乌黑长发高盘成典雅发髻，发间佩戴一支精致银质花冠，镶嵌珍珠与水晶，两侧垂落流苏珠串，在暖光下折射微芒；几缕青丝轻垂肩侧，增添柔美气息。耳畔垂挂细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容淡雅纯净——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神沉静坚定，直视镜头；唇色为柔润珊瑚红，饱满自然，衬托白皙肌肤。背景为虚化的古典室内场景，暖黄色灯光映照木质结构，营造温馨静谧氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如月下仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位清雅如雪的巨乳大胸古风少女，身着一袭柔粉渐变的露胸交领长裙，面料轻盈如雾，光泽温润，外披半透明薄纱披帛，随身形自然垂落。衣领处饰有蓬松洁白毛绒领边，增添温暖与柔美气息；胸前与腰间绣有精致立体的花卉纹样，点缀细钻与珍珠，在光线下折射微芒。她乌黑长发高盘成典雅发髻，两侧编有细密麻花辫，发间点缀数朵素雅粉白绢花与银质珠链发饰，几缕青丝轻垂肩侧，被微风拂动，增添灵动气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容淡雅温柔——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神宁静含情，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。背景为朦胧雪景，天地一色中透出一抹暖意，营造静谧诗意氛围。画面采用中国风写实绘画风格，光影以冷蓝白为主调，细腻柔和，聚焦人物上半身特写，构图居中稳定，呈现如雪中仙子般纯净、高贵、静谧的古典美感。超清，4K，电影级构图\n一位神秘如幻的巨乳大胸古风仙子，身着一袭深紫与浅紫渐变的露胸交领长袍，面料柔滑如云，光泽温润，外披半透明薄纱披帛，随身形自然垂落。肩部饰有立体羽翼造型的银质护肩，边缘缀满细钻与珠链，在冷光下折射微芒；胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、祥云与花卉，点缀细钻与珍珠，尽显华贵与灵动感。她乌黑长发高盘成典雅发髻，两侧垂落两缕梦幻紫色挑染长发，发丝如瀑倾泻肩背，被无形气流拂动，增添飘逸气息。发间佩戴一支精致银质花冠，镶嵌珍珠与水晶，两侧垂落流苏珠串，在暖光下折射微芒；额间点一颗水滴形蓝晶花钿，眉目清秀，眼线纤长勾勒出深邃双眸，睫毛浓密卷翘，眼神沉静坚定，直视镜头；唇色为饱满珊瑚红，与整体紫色调和谐统一。耳畔垂挂细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。背景为深紫蓝色朦胧空间，光线柔和温暖，营造梦幻空灵氛围。画面采用中国风写实绘画风格，光影细腻柔和，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如九天玄女般高贵、冷艳、超凡脱俗的古典神话形象。超清，4K，电影级构图\n一位温婉如画的巨乳大胸古风少女，身着一袭柔粉与正红相间的露胸交领长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。衣襟与腰间密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，点缀细钻与珍珠，在光线下熠熠生辉。她乌黑长发高盘成典雅发髻，两侧编有细密麻花辫，发间点缀数朵素雅粉白绢花与银质珠链发饰，几缕青丝轻垂肩侧，增添柔美气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。她右手轻托下颌，姿态优雅从容，背景为虚化的古典室内场景，暖黄色灯光映照木质结构，营造温馨静谧氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图\n一位清雅如画的巨乳大胸古风仕女，身着一袭淡青与橙黄相间的露胸交领长裙，面料柔滑如缎，光泽温润，外披半透明薄纱披帛，袖口宽大飘逸，随身形自然垂落。衣襟、胸前与腰间密布繁复金线刺绣，图案为展翅凤凰、牡丹与祥云，点缀细钻与珍珠，在光线下熠熠生辉。她乌黑长发高盘成典雅发髻，两侧编有细密麻花辫，发间点缀数朵素雅粉白绢花与银质珠链发饰，几缕青丝轻垂肩侧，增添柔美气息。耳畔佩戴细链水晶吊坠耳环，造型如枝叶舒展，晶莹剔透。妆容清丽淡雅——眉形细长柔和，眼线勾勒出清澈双眸，睫毛浓密卷翘，眼神温柔含情，直视镜头；唇色为饱满珊瑚红，自然润泽，衬托白皙肌肤。背景为虚化的古典室内场景，暖黄色灯光映照木质结构，营造温馨静谧氛围。画面采用中国风写实绘画风格，光线柔和温暖，聚焦人物上半身特写，突出服饰纹理与面部神韵，构图居中稳定，呈现如宋词仕女般温婉、纯净、富有东方韵味的古典美感。超清，4K，电影级构图",
+        "电影级景深 / 自然颗粒 / 胶片电影颗粒质感，高质量，高分辨率，高清晰度，高对比",
+        0,
+        100
+      ]
+    },
+    {
+      "id": 117,
+      "type": "ImpactWildcardProcessor",
+      "pos": [
+        -770,
+        930
+      ],
+      "size": [
+        800,
+        530
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed text",
+          "type": "STRING",
+          "links": [
+            366,
+            400
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "cb0655f9a11ad771b4f6a846f08be29b5b66f0eb",
+        "Node name for S&R": "ImpactWildcardProcessor",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "wildcard_text": true,
+            "populated_text": true,
+            "mode": true,
+            "seed": true,
+            "Select to add Wildcard": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "__qwenshot__. midday afternoon. __kpoppairs__",
+        "Side Profile Angle – Full Body – Wide Shot. midday afternoon. Two young women embrace warmly in front of soft white curtains; the woman on left wears a blue short-sleeved knit top with subtle snowflake embroidery, her dark hair adorned by fluffy pink-and-white cat ears tied with gold bells, holding a small plush owl toy wrapped in fabric. The other, smiling broadly with visible teeth, dons a black long-sleeve shirt under sheer mesh overlay, her straight black hair cascading down as she returns the hug tightly. Natural daylight bathes them evenly, casting gentle shadows beneath their arms and highlighting smooth skin tones. Their joyful expressions convey genuine affection amid casual surroundings—perhaps backstage or at a fan event—with glimpses of others partially seen beside them.",
+        "reproduce",
+        278472070821055,
+        "increment",
+        "Select the Wildcard to add to the text"
+      ]
+    },
+    {
+      "id": 119,
+      "type": "LatentUpscale",
+      "pos": [
+        2720,
+        190
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 375
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 245
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 246
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            386
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "LatentUpscale",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        "nearest-exact",
+        512,
+        512,
+        "center"
+      ]
+    },
+    {
+      "id": 127,
+      "type": "LatentPixelScale",
+      "pos": [
+        2720,
+        0
+      ],
+      "size": [
+        285.2000030517578,
+        146
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 376
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 252
+        },
+        {
+          "name": "upscale_model_opt",
+          "shape": 7,
+          "type": "UPSCALE_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "2804f7944f125b1c10bc9d1fbb5a997a25a62726",
+        "Node name for S&R": "LatentPixelScale",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1.5,
+        false
+      ]
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        850,
+        1110
+      ],
+      "size": [
+        660,
+        460
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 379
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy showAnything",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        "巨乳大胸，肤白貌美，完美勾勒出玲珑有致的身姿，非摆拍，日常抓拍感，双色温混合色调，Side Profile Angle – Full Body – Wide Shot. midday afternoon. Two young women embrace warmly in front of soft white curtains; the woman on left wears a blue short-sleeved knit top with subtle snowflake embroidery, her dark hair adorned by fluffy pink-and-white cat ears tied with gold bells, holding a small plush owl toy wrapped in fabric. The other, smiling broadly with visible teeth, dons a black long-sleeve shirt under sheer mesh overlay, her straight black hair cascading down as she returns the hug tightly. Natural daylight bathes them evenly, casting gentle shadows beneath their arms and highlighting smooth skin tones. Their joyful expressions convey genuine affection amid casual surroundings—perhaps backstage or at a fan event—with glimpses of others partially seen beside them.电影级景深 / 自然颗粒 / 胶片电影颗粒质感，高质量，高分辨率，高清晰度，高对比"
+      ]
+    },
+    {
+      "id": 141,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        1730,
+        880
+      ],
+      "size": [
+        390,
+        814
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 303
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 301
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [
+            302
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "title": "Power Lora Loader (rgthree) 2nd Sampler",
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
+        "Show Strengths": "Single Strength",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Real Breast Nipples-QWEN-[rbn]-GMR.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\lenovo.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\iphone.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\the cleavage.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\[QWEN] JTT2_5.safetensors",
+          "strength": 0.3,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\adorablegirls.safetensors",
+          "strength": 0.55,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen_MCNL_v1.0.safetensors",
+          "strength": 0.3,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "QWEN\\Qwen-Image-Lightning-8steps-V1.0.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-boreal-portraits-portraits-high-rank.safetensors",
+          "strength": 0.5,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Ghost Nipples-QWEN-GMR.safetensors",
+          "strength": 0.3,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\MEXX_QWEN_TG300_23.safetensors",
+          "strength": 0.5,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-Image-Analog-v1.1.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-Image_SmartphoneSnapshotPhotoReality_v4_by-AI_Characters_TRIGGER$amateur photo$.safetensors",
+          "strength": 0.7,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Samsung.safetensors",
+          "strength": 0.7,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-cn-3.safetensors",
+          "strength": 0.15,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\real_life_qwen.safetensors",
+          "strength": 0.7,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-iPhone-V1.1.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen_907X_Edited_Lesser_V2-8K5.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen_gufeng-000002.safetensors",
+          "strength": 0.45,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\QwenRebalanceV10_v10LoraR16.safetensors",
+          "strength": 0.65,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen_Nsfw_Body_V14-10K.safetensors",
+          "strength": 0.2,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-image_nsfw_adv_v1.0.safetensors",
+          "strength": 0.2,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\labubu_Qwen-LoRA_v2-000015.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\amateurphotography_v1_qwen.safetensors",
+          "strength": 0.5,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\QwenPersonPhotosylte_000046000.safetensors",
+          "strength": 0.3,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "QWEN\\hinaQwenImageAsianMixLora_v2.safetensors",
+          "strength": 0.6,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-boreal-general-discrete-low-rank.safetensors",
+          "strength": 0.25,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Human_Focus_Photography_v2.0-alpha3.safetensors",
+          "strength": 0.6,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-Image_EmotionalPhotography_v2.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {},
+        ""
+      ]
+    },
+    {
+      "id": 145,
+      "type": "Width and height from aspect ratio 🪴",
+      "pos": [
+        5510,
+        200
+      ],
+      "size": [
+        277.275,
+        126
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            324
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Addoor",
+        "ver": "d51659f66696e9a89c7f6adbf159c1f074742b7a",
+        "Node name for S&R": "Width and height from aspect ratio 🪴",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "aspect_ratio": true,
+            "target_size": true,
+            "multiple_of": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "9:16",
+        1024,
+        64
+      ]
+    },
+    {
+      "id": 146,
+      "type": "FaceDetailer",
+      "pos": [
+        4200,
+        810
+      ],
+      "size": [
+        500,
+        1070
+      ],
+      "flags": {},
+      "order": 62,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 332
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 336
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 357
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 342
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 338
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 341
+        },
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 344
+        },
+        {
+          "name": "sam_model_opt",
+          "shape": 7,
+          "type": "SAM_MODEL",
+          "link": 343
+        },
+        {
+          "name": "segm_detector_opt",
+          "shape": 7,
+          "type": "SEGM_DETECTOR",
+          "link": 345
+        },
+        {
+          "name": "detailer_hook",
+          "shape": 7,
+          "type": "DETAILER_HOOK",
+          "link": null
+        },
+        {
+          "name": "scheduler_func_opt",
+          "shape": 7,
+          "type": "SCHEDULER_FUNC",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            346,
+            350,
+            352
+          ]
+        },
+        {
+          "name": "cropped_refined",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "cropped_enhanced_alpha",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "detailer_pipe",
+          "type": "DETAILER_PIPE",
+          "links": null
+        },
+        {
+          "name": "cnet_images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "f86c5afc68958afb89bf66898d6b5038ce98a096",
+        "Node name for S&R": "FaceDetailer",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "guide_size": true,
+            "guide_size_for": true,
+            "max_size": true,
+            "seed": true,
+            "steps": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "denoise": true,
+            "feather": true,
+            "noise_mask": true,
+            "force_inpaint": true,
+            "bbox_threshold": true,
+            "bbox_dilation": true,
+            "bbox_crop_factor": true,
+            "sam_detection_hint": true,
+            "sam_dilation": true,
+            "sam_threshold": true,
+            "sam_bbox_expansion": true,
+            "sam_mask_hint_threshold": true,
+            "sam_mask_hint_use_negative": true,
+            "drop_size": true,
+            "wildcard": true,
+            "cycle": true,
+            "inpaint_model": true,
+            "noise_mask_feather": true,
+            "tiled_encode": true,
+            "tiled_decode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1024,
+        true,
+        1024,
+        8008135,
+        "fixed",
+        8,
+        1,
+        "ipndm_v",
+        "sgm_uniform",
+        0.5,
+        16,
+        true,
+        true,
+        0.5,
+        32,
+        5.5,
+        "center-1",
+        32,
+        0.1,
+        32,
+        0.1,
+        "False",
+        40,
+        "",
+        1,
+        false,
+        8,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 147,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        3350,
+        850
+      ],
+      "size": [
+        400,
+        454
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 4,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 334
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 333
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [
+            335
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
+        "Show Strengths": "Single Strength",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": true,
+          "lora": "qwen\\HearmemanAI_V3_Rank64_BreastsLoRA_Epoch60.safetensors",
+          "strength": 0.5,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Real Breast Nipples-QWEN-[rbn]-GMR.safetensors",
+          "strength": 0.4,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\breast_slider_qwen_v1.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\[QWEN] JTT2_5.safetensors",
+          "strength": 0.35,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\MEXX_QWEN_TG300_23.safetensors",
+          "strength": 0.35,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen-image_nsfw_adv_v1.0.safetensors",
+          "strength": 0.4,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen-cn-3.safetensors",
+          "strength": 0.15,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Qwen-Image-Lightning-8steps-V2.0.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\qwen_MCNL_v1.0.safetensors",
+          "strength": 0.25,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen_907X_Edited_Lesser_V2-8K5.safetensors",
+          "strength": 0.8,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Qwen_Nsfw_Body_V14-10K.safetensors",
+          "strength": 0.15,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Ghost Nipples-QWEN-GMR.safetensors",
+          "strength": 0.45,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "qwen\\Samsung.safetensors",
+          "strength": 0.7,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "qwen\\Qwen-Image_SmartphoneSnapshotPhotoReality_v4_by-AI_Characters_TRIGGER$amateur photo$.safetensors",
+          "strength": 0.65,
+          "strengthTwo": null
+        },
+        {},
+        ""
+      ]
+    },
+    {
+      "id": 148,
+      "type": "CLIPTextEncode",
+      "pos": [
+        3780,
+        830
+      ],
+      "size": [
+        340,
+        130
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 356
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            338,
+            340
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "rgn, 巨乳大胸，粉红色乳晕和乳头。超清，4K。"
+      ]
+    },
+    {
+      "id": 149,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        3820,
+        1290
+      ],
+      "size": [
+        300,
+        58
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 335
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            336
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        2.8
+      ]
+    },
+    {
+      "id": 150,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        3920,
+        1010
+      ],
+      "size": [
+        197.72500610351562,
+        26
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 340
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            341
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "ConditioningZeroOut",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 151,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        3920,
+        1110
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            344
+          ]
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-subpack",
+        "ver": "50c7b71a6a224734cc9b21963c6d1926816a97f1",
+        "Node name for S&R": "UltralyticsDetectorProvider",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        "bbox/female_breast-v4.2.pt"
+      ]
+    },
+    {
+      "id": 152,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        3900,
+        1210
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": null
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": [
+            345
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-subpack",
+        "ver": "50c7b71a6a224734cc9b21963c6d1926816a97f1",
+        "Node name for S&R": "UltralyticsDetectorProvider",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        "segm/Anzhc Breasts Seg v1 1024s.pt"
+      ]
+    },
+    {
+      "id": 153,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        4710,
+        790
+      ],
+      "size": [
+        730,
+        1260
+      ],
+      "flags": {},
+      "order": 63,
+      "mode": 4,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 348
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 346
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
+        "comparer_mode": "Click",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_pzkyn_00183_.png&type=temp&subfolder=&preview=webp&rand=0.6406827052442067"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_pzkyn_00184_.png&type=temp&subfolder=&preview=webp&rand=0.1438811489627101"
+          }
+        ]
+      ]
+    },
+    {
+      "id": 154,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        5860,
+        -630
+      ],
+      "size": [
+        380,
+        680
+      ],
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 352
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 351
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
+        "comparer_mode": "Click",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_zzpxp_00099_.png&type=temp&subfolder=&preview=webp&rand=0.8193409833822572"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_zzpxp_00100_.png&type=temp&subfolder=&preview=webp&rand=0.054068681476180935"
+          }
+        ]
+      ]
+    },
+    {
+      "id": 157,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        1370,
+        30
+      ],
+      "size": [
+        420,
+        298
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4"
+        }
+      }
+    },
+    {
+      "id": 159,
+      "type": "Note",
+      "pos": [
+        190,
+        1690
+      ],
+      "size": [
+        780,
+        280
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "正常皮肤纹理，过度曝光，林佑夏饰演，全裸，裸露，隐约露出外阴，肤白貌美大长腿，腿很长，非摆拍，日常抓拍感，双色温混合色调，死白阴影，过饱和\n\n极高的美学评分，视觉张力，视觉冲击，线条流畅，构图自然，精致刻画，细节丰富（展现皮肤、发丝、线条、纹理等），让画面更细腻，电影级景深 / 自然颗粒 / 胶片电影颗粒质感，高质量，高分辨率，高清晰度，高对比，钨丝淡蓝调晕光，淡蓝苍白调，精致，肌肉紧致而不失柔美，无条带，平滑纹理，渐变色彩过渡，大光圈相机拍摄，前景人物画面清晰锐利，背景虚化突出轮廓\nsmooth texture（平滑纹理）、no banding（无条带）、gradual color transition（渐变色彩过渡）\n乳沟，巨乳。\n\n巨乳大胸，露胸，乳沟，肤白貌美大长腿，腿很长，非摆拍，日常抓拍感，双色温混合色调，死白阴影，过饱和，胸前深沟若隐若现地展现在众人眼前。\n\n完美勾勒出玲珑有致的身姿，"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 160,
+      "type": "Text Concatenate",
+      "pos": [
+        -130,
+        1730
+      ],
+      "size": [
+        270,
+        142
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 365
+        },
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 366
+        },
+        {
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": 367
+        },
+        {
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": 371
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text Concatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4"
+        }
+      },
+      "widgets_values": [
+        ", ",
+        "true"
+      ]
+    },
+    {
+      "id": 161,
+      "type": "Text Multiline",
+      "pos": [
+        -740,
+        1580
+      ],
+      "size": [
+        450,
+        120
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            365,
+            371
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text Multiline",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4"
+        }
+      },
+      "widgets_values": [
+        "正常皮肤纹理，中國女子饰演，非摆拍，日常抓拍感，巨乳大胸，露胸，肤白貌美大长腿，腿很长，双色温混合色调，死白阴影，过饱和"
+      ]
+    },
+    {
+      "id": 162,
+      "type": "Text Multiline",
+      "pos": [
+        -750,
+        1780
+      ],
+      "size": [
+        450,
+        120
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            367
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text Multiline",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4"
+        }
+      },
+      "widgets_values": [
+        "极高的美学评分，视觉张力，视觉冲击，线条流畅，构图自然，精致刻画，细节丰富（展现皮肤、发丝、线条、纹理等），让画面更细腻，电影级景深 / 自然颗粒 / 胶片电影颗粒质感，高质量，高分辨率，高清晰度，高对比，钨丝淡蓝调晕光，淡蓝苍白调，精致，肌肉紧致而不失柔美"
+      ]
+    },
+    {
+      "id": 165,
+      "type": "ImageScaleBy",
+      "pos": [
+        2730,
+        370
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 380
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            381
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "ImageScaleBy",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1.5
+      ]
+    },
+    {
+      "id": 166,
+      "type": "VAEEncode",
+      "pos": [
+        2810,
+        500
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 381
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 382
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "VAEEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 168,
+      "type": "SharkOptions_Beta",
+      "pos": [
+        2570,
+        2180
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "options",
+          "shape": 7,
+          "type": "OPTIONS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "options",
+          "type": "OPTIONS",
+          "links": [
+            393
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "RES4LYF",
+        "ver": "46de917234f9fef3f2ab411c41e07aa3c633f4f7",
+        "Node name for S&R": "SharkOptions_Beta",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "pyramid-interpolated",
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 169,
+      "type": "ClownOptions_SDE_Beta",
+      "pos": [
+        2190,
+        2180
+      ],
+      "size": [
+        304.125,
+        266
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "etas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "etas_substep",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "options",
+          "shape": 7,
+          "type": "OPTIONS",
+          "link": 391
+        }
+      ],
+      "outputs": [
+        {
+          "name": "options",
+          "type": "OPTIONS",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "RES4LYF",
+        "ver": "46de917234f9fef3f2ab411c41e07aa3c633f4f7",
+        "Node name for S&R": "ClownOptions_SDE_Beta",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "white",
+        "pink",
+        "exp",
+        "exp",
+        0.5,
+        0.5,
+        1010101010101,
+        "fixed"
+      ]
+    },
+    {
+      "id": 170,
+      "type": "ClownOptions_DetailBoost_Beta",
+      "pos": [
+        1870,
+        2190
+      ],
+      "size": [
+        270,
+        218
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "weights",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "etas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "options",
+          "shape": 7,
+          "type": "OPTIONS",
+          "link": 392
+        }
+      ],
+      "outputs": [
+        {
+          "name": "options",
+          "type": "OPTIONS",
+          "links": [
+            391
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "RES4LYF",
+        "ver": "46de917234f9fef3f2ab411c41e07aa3c633f4f7",
+        "Node name for S&R": "ClownOptions_DetailBoost_Beta",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        1,
+        "model",
+        "exp",
+        0.5,
+        2,
+        8
+      ]
+    },
+    {
+      "id": 171,
+      "type": "ClownOptions_SigmaScaling_Beta",
+      "pos": [
+        1540,
+        2190
+      ],
+      "size": [
+        281.34999694824216,
+        242
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "s_noises",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "s_noises_substep",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "options",
+          "shape": 7,
+          "type": "OPTIONS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "options",
+          "type": "OPTIONS",
+          "links": [
+            392
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "RES4LYF",
+        "ver": "46de917234f9fef3f2ab411c41e07aa3c633f4f7",
+        "Node name for S&R": "ClownOptions_SigmaScaling_Beta",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        1,
+        1,
+        0.9,
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 172,
+      "type": "Note",
+      "pos": [
+        1600,
+        2490
+      ],
+      "size": [
+        800,
+        120
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "https://civitai.com/articles/21912/qwen-clownshark-res4lyf-noise-compare-realism-tricks\n\nhttps://civitai.com/articles/19156/res4lyf-samplers-and-schedulers-plain-language-guide"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 181,
+      "type": "Note",
+      "pos": [
+        -1420,
+        900
+      ],
+      "size": [
+        590,
+        630
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "qwenshot\n\nEye-Level – Upper Body – Medium Close-Up\nSlight Low Angle – Full Body – Medium Shot\nOver-the-Shoulder Angle – Mid-Body – Close-Up\nDutch Angle (Tilted) – Upper Body – Close-Up\nHigh Angle (Looking Down) – Head & Shoulders – Tight Close-Up\nSide Profile Angle – Full Body – Wide Shot\nFrom Behind (Back View) – Back & Shoulders – Medium Close-Up\nLow-Angle Dutch Tilt – Legs & Lower Body – Medium Shot\nClose-Up Macro Detail – Eyes, Lips, Neck – Extreme Close-Up\nWide-Angle Low Position – Full Body + Environment – Wide Shot\n\nqwenlightdark\n\nSpotlight key lighting with soft fill\nBacklight or rim light for separation from background\nColored stage gels for dynamic atmosphere\nHigh-contrast exposure with balanced shutter sync\nSoft ambient spill to subtly illuminate stage elements\nUse of shallow depth of field (wide aperture) to blur background\nSynchronized flash or strobe during peak action moments\nControlled underexposure of surroundings to keep focus on performer\nLED panel accents for facial clarity in low light\nGradual falloff lighting to maintain stage shape without full visibility\n\nqwenlightoutdoors\n\nNatural daylight  \nSoft diffused sunlight  \nGolden hour backlighting  \nWindow light (single-source, directional)  \nStudio softbox lighting  \nRim lighting for silhouette and hair glow  \nFill light to reduce shadows on the face  \nBacklight to separate subject from background  \nLED panel lighting for consistent indoor shots  \nReflectors to bounce light and soften contrasts\n\nqwenlightindoors\n\nOverhead soft fluorescent panels (ceiling-mounted)\nDual softbox lighting (left and right of camera)\nLarge window with sheer curtains for diffused natural light\nLED ring light for even facial illumination\nFront-facing key light with low contrast ratio\nFill light from reflectors or bounce boards\nRim lights (hair lights) to add dimension and brightness\nBacklight or background light to eliminate shadows on walls\nContinuous LED video lights (high lumens, daylight balanced)\nUse of white or light-colored walls and ceilings to naturally reflect and amplify light"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 196,
+      "type": "SEGSOrderedFilterDetailerHookProvider",
+      "pos": [
+        4010,
+        510
+      ],
+      "size": [
+        355.59999694824216,
+        130
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "DETAILER_HOOK",
+          "type": "DETAILER_HOOK",
+          "links": [
+            407
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "2804f7944f125b1c10bc9d1fbb5a997a25a62726",
+        "Node name for S&R": "SEGSOrderedFilterDetailerHookProvider",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "area(=w*h)",
+        true,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 197,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        3810,
+        310
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            408
+          ]
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-subpack",
+        "ver": "50c7b71a6a224734cc9b21963c6d1926816a97f1",
+        "Node name for S&R": "UltralyticsDetectorProvider",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "bbox/yolov8l-face-lindevs.pt"
+      ]
+    },
+    {
+      "id": 198,
+      "type": "ImageBlur",
+      "pos": [
+        6840,
+        240
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "ImageBlur",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        2,
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      75,
+      38,
+      0,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      76,
+      39,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      133,
+      66,
+      0,
+      78,
+      0,
+      "MODEL"
+    ],
+    [
+      134,
+      6,
+      0,
+      78,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      135,
+      7,
+      0,
+      78,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      136,
+      58,
+      0,
+      78,
+      3,
+      "LATENT"
+    ],
+    [
+      143,
+      38,
+      0,
+      82,
+      1,
+      "CLIP"
+    ],
+    [
+      144,
+      82,
+      0,
+      66,
+      0,
+      "MODEL"
+    ],
+    [
+      149,
+      6,
+      0,
+      84,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      150,
+      7,
+      0,
+      84,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      151,
+      39,
+      0,
+      84,
+      4,
+      "VAE"
+    ],
+    [
+      153,
+      86,
+      0,
+      84,
+      5,
+      "UPSCALE_MODEL"
+    ],
+    [
+      155,
+      8,
+      0,
+      87,
+      0,
+      "IMAGE"
+    ],
+    [
+      161,
+      39,
+      0,
+      89,
+      3,
+      "VAE"
+    ],
+    [
+      166,
+      92,
+      0,
+      89,
+      7,
+      "SAM_MODEL"
+    ],
+    [
+      167,
+      93,
+      1,
+      89,
+      8,
+      "SEGM_DETECTOR"
+    ],
+    [
+      181,
+      37,
+      0,
+      100,
+      0,
+      "MODEL"
+    ],
+    [
+      182,
+      38,
+      0,
+      100,
+      1,
+      "CLIP"
+    ],
+    [
+      183,
+      100,
+      1,
+      97,
+      0,
+      "CLIP"
+    ],
+    [
+      184,
+      100,
+      1,
+      89,
+      2,
+      "CLIP"
+    ],
+    [
+      186,
+      103,
+      0,
+      97,
+      1,
+      "STRING"
+    ],
+    [
+      187,
+      100,
+      0,
+      104,
+      0,
+      "MODEL"
+    ],
+    [
+      188,
+      104,
+      0,
+      89,
+      1,
+      "MODEL"
+    ],
+    [
+      212,
+      7,
+      0,
+      109,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      214,
+      39,
+      0,
+      113,
+      1,
+      "VAE"
+    ],
+    [
+      215,
+      113,
+      0,
+      87,
+      1,
+      "IMAGE"
+    ],
+    [
+      218,
+      113,
+      0,
+      94,
+      0,
+      "IMAGE"
+    ],
+    [
+      224,
+      105,
+      0,
+      109,
+      0,
+      "MODEL"
+    ],
+    [
+      234,
+      37,
+      0,
+      82,
+      0,
+      "MODEL"
+    ],
+    [
+      236,
+      6,
+      0,
+      109,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      245,
+      110,
+      0,
+      119,
+      1,
+      "INT"
+    ],
+    [
+      246,
+      110,
+      1,
+      119,
+      2,
+      "INT"
+    ],
+    [
+      252,
+      39,
+      0,
+      127,
+      1,
+      "VAE"
+    ],
+    [
+      255,
+      98,
+      0,
+      89,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      270,
+      109,
+      1,
+      113,
+      0,
+      "LATENT"
+    ],
+    [
+      293,
+      37,
+      0,
+      73,
+      0,
+      "MODEL"
+    ],
+    [
+      301,
+      38,
+      0,
+      141,
+      1,
+      "CLIP"
+    ],
+    [
+      302,
+      141,
+      0,
+      105,
+      0,
+      "MODEL"
+    ],
+    [
+      303,
+      37,
+      0,
+      141,
+      0,
+      "MODEL"
+    ],
+    [
+      324,
+      145,
+      1,
+      84,
+      7,
+      "INT"
+    ],
+    [
+      326,
+      89,
+      0,
+      94,
+      1,
+      "IMAGE"
+    ],
+    [
+      330,
+      78,
+      1,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      332,
+      89,
+      0,
+      146,
+      0,
+      "IMAGE"
+    ],
+    [
+      333,
+      38,
+      0,
+      147,
+      1,
+      "CLIP"
+    ],
+    [
+      334,
+      37,
+      0,
+      147,
+      0,
+      "MODEL"
+    ],
+    [
+      335,
+      147,
+      0,
+      149,
+      0,
+      "MODEL"
+    ],
+    [
+      336,
+      149,
+      0,
+      146,
+      1,
+      "MODEL"
+    ],
+    [
+      338,
+      148,
+      0,
+      146,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      340,
+      148,
+      0,
+      150,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      341,
+      150,
+      0,
+      146,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      342,
+      39,
+      0,
+      146,
+      3,
+      "VAE"
+    ],
+    [
+      343,
+      92,
+      0,
+      146,
+      7,
+      "SAM_MODEL"
+    ],
+    [
+      344,
+      151,
+      0,
+      146,
+      6,
+      "BBOX_DETECTOR"
+    ],
+    [
+      345,
+      152,
+      1,
+      146,
+      8,
+      "SEGM_DETECTOR"
+    ],
+    [
+      346,
+      146,
+      0,
+      153,
+      1,
+      "IMAGE"
+    ],
+    [
+      348,
+      89,
+      0,
+      153,
+      0,
+      "IMAGE"
+    ],
+    [
+      349,
+      38,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      350,
+      146,
+      0,
+      84,
+      0,
+      "IMAGE"
+    ],
+    [
+      351,
+      84,
+      0,
+      154,
+      1,
+      "IMAGE"
+    ],
+    [
+      352,
+      146,
+      0,
+      154,
+      0,
+      "IMAGE"
+    ],
+    [
+      353,
+      84,
+      0,
+      60,
+      0,
+      "IMAGE"
+    ],
+    [
+      354,
+      113,
+      0,
+      89,
+      0,
+      "IMAGE"
+    ],
+    [
+      356,
+      38,
+      0,
+      148,
+      0,
+      "CLIP"
+    ],
+    [
+      357,
+      38,
+      0,
+      146,
+      2,
+      "CLIP"
+    ],
+    [
+      363,
+      88,
+      0,
+      58,
+      0,
+      "INT"
+    ],
+    [
+      364,
+      88,
+      1,
+      58,
+      1,
+      "INT"
+    ],
+    [
+      365,
+      161,
+      0,
+      160,
+      0,
+      "STRING"
+    ],
+    [
+      366,
+      117,
+      0,
+      160,
+      1,
+      "STRING"
+    ],
+    [
+      367,
+      162,
+      0,
+      160,
+      2,
+      "STRING"
+    ],
+    [
+      371,
+      161,
+      0,
+      160,
+      3,
+      "STRING"
+    ],
+    [
+      375,
+      78,
+      1,
+      119,
+      0,
+      "LATENT"
+    ],
+    [
+      376,
+      78,
+      1,
+      127,
+      0,
+      "LATENT"
+    ],
+    [
+      379,
+      114,
+      0,
+      137,
+      0,
+      "*"
+    ],
+    [
+      380,
+      8,
+      0,
+      165,
+      0,
+      "IMAGE"
+    ],
+    [
+      381,
+      165,
+      0,
+      166,
+      0,
+      "IMAGE"
+    ],
+    [
+      382,
+      39,
+      0,
+      166,
+      1,
+      "VAE"
+    ],
+    [
+      385,
+      73,
+      0,
+      84,
+      1,
+      "MODEL"
+    ],
+    [
+      386,
+      119,
+      0,
+      109,
+      3,
+      "LATENT"
+    ],
+    [
+      391,
+      170,
+      0,
+      169,
+      2,
+      "OPTIONS"
+    ],
+    [
+      392,
+      171,
+      0,
+      170,
+      2,
+      "OPTIONS"
+    ],
+    [
+      393,
+      168,
+      0,
+      109,
+      6,
+      "OPTIONS"
+    ],
+    [
+      394,
+      88,
+      0,
+      84,
+      6,
+      "INT"
+    ],
+    [
+      397,
+      103,
+      0,
+      89,
+      11,
+      "STRING"
+    ],
+    [
+      400,
+      117,
+      0,
+      114,
+      0,
+      "STRING"
+    ],
+    [
+      404,
+      114,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      407,
+      196,
+      0,
+      89,
+      9,
+      "DETAILER_HOOK"
+    ],
+    [
+      408,
+      197,
+      0,
+      89,
+      6,
+      "BBOX_DETECTOR"
+    ],
+    [
+      409,
+      6,
+      0,
+      98,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      411,
+      97,
+      0,
+      89,
+      4,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Step1 - Load models",
+      "bounding": [
+        10,
+        -20,
+        350,
+        433.6000061035156
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Step2 - Image size",
+      "bounding": [
+        10,
+        430,
+        350,
+        210
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Step3 - Prompt",
+      "bounding": [
+        380,
+        160,
+        450,
+        470
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Lightx2v 8steps LoRA",
+      "bounding": [
+        370,
+        -40,
+        450,
+        170
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Step7 - Breast Detailer",
+      "bounding": [
+        3310,
+        720,
+        2140,
+        1343.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "Step6 - Face Detailer",
+      "bounding": [
+        3360,
+        -720,
+        2050,
+        1383.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "Step8 - Upscaler",
+      "bounding": [
+        5480,
+        -710,
+        1120,
+        1343.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "Step5 - Second Sampler",
+      "bounding": [
+        1720,
+        810,
+        1490,
+        1223.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "Step4 - First Sampler + Latent Upscale",
+      "bounding": [
+        1920,
+        -270,
+        1095.200003051758,
+        829.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 10,
+      "title": "ADV - ClownShark Options",
+      "bounding": [
+        1500,
+        2090,
+        1400,
+        570
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7627768444385532,
+      "offset": [
+        688.6836154154022,
+        393.166630411312
+      ]
+    },
+    "frontendVersion": "1.28.8",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "VHS_latentpreview": true,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
