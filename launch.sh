@@ -19,7 +19,7 @@ if [ -z "$params" ]; then
         --cuda-malloc \
         --preview-method taesd \
         --async-offload \
-        --cache-lru 12 \
+        --cache-ram \
         --output-directory "F:\\GeneratedImages"
 else
     TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" main.py \
@@ -29,6 +29,7 @@ else
         --use-sage-attention \
         --async-offload \
         --disable-xformers \
+        --cache-ram \
         --fast fp16_accumulation \
         --fp16-unet \
         --fp16-vae \
