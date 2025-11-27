@@ -18,13 +18,9 @@ if [ -z "$params" ]; then
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
-        --use-sage-attention \
         --async-offload \
-        --fast fp16_accumulation \
-        --fp16-unet \
-        --fp16-vae \
-        --fp16-text-enc \
-        --cache-lru 12
+        --cache-lru 12 \
+        --output-directory "F:\\GeneratedImages"
 else
     TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" main.py \
         --port 55554 \
@@ -39,5 +35,6 @@ else
         --fp16-text-enc \
         --cache-lru 12 \
         --normalvram \
+        --output-directory "F:\\GeneratedImages" \
         "$@"
 fi
