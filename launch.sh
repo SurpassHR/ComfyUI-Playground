@@ -14,7 +14,7 @@ fi
 
 PYTHON="python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/python.exe
 if [ -z "$params" ]; then
-    "$PYTHON" main.py \
+    "$PYTHON" -B main.py \
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
@@ -22,7 +22,7 @@ if [ -z "$params" ]; then
         --cache-ram \
         --output-directory "F:\\GeneratedImages"
 else
-    TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" main.py \
+    TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" -B main.py \
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
