@@ -226,7 +226,7 @@
     "Crystools.MonitorWidth": 65,
     "Crystools.RefreshRate": 1,
     "LiteGraph.ContextMenu.Scaling": true,
-    "Comfy.LinkRenderMode": 0,
+    "Comfy.LinkRenderMode": 1,
     "Comfy.Graph.LinkMarkers": 2,
     "Comfy.DOMClippingEnabled": false,
     "Comfy.Workflow.AutoSave": "after delay",
@@ -275,5 +275,6 @@
     "Comfy.Minimap.Visible": false,
     "Comfy.DisableFloatRounding": true,
     "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
-    "Comfy.Sidebar.Style": "floating"
+    "Comfy.Sidebar.Style": "floating",
+    "LiteGraph.Canvas.MaximumFps": 120
 }
