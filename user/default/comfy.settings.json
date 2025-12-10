@@ -209,7 +209,7 @@
     "Comfy.Sidebar.UnifiedWidth": true,
     "Comfy.Sidebar.Size": "small",
     "Comfy.Sidebar.Location": "right",
-    "Comfy.ColorPalette": "github",
+    "Comfy.ColorPalette": "obsidian_dark",
     "pysssss.SnapToGrid": true,
     "Comfy.Release.Version": "0.3.49",
     "Comfy.Release.Status": "what's new seen",
@@ -275,6 +275,12 @@
     "Comfy.Minimap.Visible": false,
     "Comfy.DisableFloatRounding": true,
     "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
-    "Comfy.Sidebar.Style": "floating",
-    "LiteGraph.Canvas.MaximumFps": 120
+    "Comfy.Sidebar.Style": "connected",
+    "LiteGraph.Canvas.MaximumFps": 60,
+    "Comfy.Workflow.WarnBlueprintOverwrite": false,
+    "Comfy.VueNodes.AutoScaleLayout": false,
+    "Comfy.Graph.CanvasInfo": false,
+    "EasyUse.StylesSelector.DisplayType": "List",
+    "Comfy.VueNodes.Enabled": false,
+    "Comfy.EnableTooltips": false
 }
