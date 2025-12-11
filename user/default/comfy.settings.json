@@ -221,7 +221,7 @@
     "Crystools.newSave": true,
     "Crystools.ShowGpuUsageZero": true,
     "Crystools.ShowHdd": true,
-    "Crystools.WhichHdd": "F:\\",
+    "Crystools.WhichHdd": "/teamspace",
     "Crystools.ShowCpu": true,
     "Crystools.MonitorWidth": 65,
     "Crystools.RefreshRate": 1,
