@@ -20,22 +20,15 @@ if [ -z "$params" ]; then
         --preview-method taesd \
         --async-offload \
         --cache-ram \
-        --output-directory "F:\\GeneratedImages"
+        --disable-xformers \
+        --output-directory F:\\GeneratedImages
 else
     TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" -B main.py \
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
-        --use-sage-attention \
         --async-offload \
-        --disable-xformers \
         --cache-ram \
-        --fast fp16_accumulation \
-        --fp16-unet \
-        --fp16-vae \
-        --fp16-text-enc \
-        --cache-lru 12 \
-        --normalvram \
-        --output-directory "F:\\GeneratedImages" \
+        --output-directory F:\\GeneratedImages \
         "$@"
 fi
