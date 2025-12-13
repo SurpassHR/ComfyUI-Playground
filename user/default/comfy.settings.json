@@ -226,7 +226,7 @@
     "Crystools.MonitorWidth": 65,
     "Crystools.RefreshRate": 1,
     "LiteGraph.ContextMenu.Scaling": true,
-    "Comfy.LinkRenderMode": 1,
+    "Comfy.LinkRenderMode": -1,
     "Comfy.Graph.LinkMarkers": 2,
     "Comfy.DOMClippingEnabled": false,
     "Comfy.Workflow.AutoSave": "after delay",
