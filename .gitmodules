@@ -73,3 +73,6 @@
 [submodule "ComfyUI-ReservedVRAM"]
 	path = custom_nodes/ComfyUI-ReservedVRAM
 	url = https://github.com/Windecay/ComfyUI-ReservedVRAM.git
+[submodule "workflows"]
+	path = user/default/workflows
+	url = https://github.com/SurpassHR/ComfyUI-workflows.git
