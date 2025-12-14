@@ -64,7 +64,8 @@
                     "error-text": "#ff4444",
                     "border-color": "#29292c",
                     "tr-even-bg-color": "rgba(28,28,28,.9)",
-                    "tr-odd-bg-color": "rgba(19,19,19,.9)"
+                    "tr-odd-bg-color": "rgba(19,19,19,.9)",
+                    "comfy-menu-secondary-bg": "rgba(24,24,24,.9)"
                 }
             }
         },
@@ -226,10 +227,10 @@
     "Crystools.MonitorWidth": 65,
     "Crystools.RefreshRate": 1,
     "LiteGraph.ContextMenu.Scaling": true,
-    "Comfy.LinkRenderMode": -1,
+    "Comfy.LinkRenderMode": 2,
     "Comfy.Graph.LinkMarkers": 2,
     "Comfy.DOMClippingEnabled": false,
-    "Comfy.Workflow.AutoSave": "after delay",
+    "Comfy.Workflow.AutoSave": "off",
     "Comfy.InstalledVersion": "1.25.11",
     "Comfy.TutorialCompleted": true,
     "Comfy.Locale": "en",
@@ -272,7 +273,7 @@
     "VHS.LatentPreview": true,
     "RES4LYF.enableDebugLogs": true,
     "Comfy.Workflow.SortNodeIdOnSave": true,
-    "Comfy.Minimap.Visible": false,
+    "Comfy.Minimap.Visible": true,
     "Comfy.DisableFloatRounding": true,
     "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
     "Comfy.Sidebar.Style": "connected",
@@ -282,5 +283,8 @@
     "Comfy.Graph.CanvasInfo": false,
     "EasyUse.StylesSelector.DisplayType": "List",
     "Comfy.VueNodes.Enabled": false,
-    "Comfy.EnableTooltips": false
+    "Comfy.EnableTooltips": false,
+    "Comfy.EnableWorkflowViewRestore": false,
+    "Comfy.DevMode": true,
+    "Comfy.EditAttention.Delta": 0.1
 }

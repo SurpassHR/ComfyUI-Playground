@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ComfyUI launching script for Linux/macOS
+# ComfyUI launching script for Linux/macOS also suitable for windows bash
 
 params=""
 # Check if parameters exist
@@ -11,6 +11,9 @@ else
     echo "Parameters found: $@"
     params="$@"
 fi
+
+echo "Updating workflows"
+bash update_workflows.sh
 
 PYTHON="python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/python.exe
 if [ -z "$params" ]; then
@@ -24,11 +27,14 @@ if [ -z "$params" ]; then
         --output-directory F:\\GeneratedImages
 else
     TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" -B main.py \
+        "$@" \
         --port 55554 \
         --cuda-malloc \
         --preview-method taesd \
         --async-offload \
         --cache-ram \
-        --output-directory F:\\GeneratedImages \
-        "$@"
+        --output-directory F:\\GeneratedImages
 fi
+
+echo "Uploading workflows"
+bash upload_workflows.sh
