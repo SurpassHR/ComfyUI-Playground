@@ -222,7 +222,7 @@
     "Crystools.newSave": true,
     "Crystools.ShowGpuUsageZero": true,
     "Crystools.ShowHdd": true,
-    "Crystools.WhichHdd": "f://",
+    "Crystools.WhichHdd": "/home",
     "Crystools.ShowCpu": true,
     "Crystools.MonitorWidth": 65,
     "Crystools.RefreshRate": 1,
