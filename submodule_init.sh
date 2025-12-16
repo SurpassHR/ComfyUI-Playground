@@ -1,13 +1,23 @@
 #!/bin/bash
-# We suppose you have finished all the config item in .gitmodule file.
+# 初始化并更新所有子模块（基于 .gitmodules）
 
-# Clone all the submodules (init and update based on .gitmodules)
-git config --file .gitmodules --name-only --get-regexp "submodule\..*\.url" | \
-while read submodule; do
-    name=$(echo $submodule | sed 's/submodule\.\(.*\)\.url/\1/')
-    url=$(git config --file .gitmodules "$submodule")
-    echo -e "Initializing submodule, name: $name, url: $url"
-    git submodule add "$url" "$name"
-    git submodule init "$name"
+if [ ! -f ".gitmodules" ]; then
+  echo "未找到 .gitmodules 文件，请在仓库根目录运行此脚本。"
+  exit 1
+fi
+
+# 遍历所有子模块路径
+git config --file .gitmodules --get-regexp "submodule\..*\.path" | while read path_key path; do
+    name=$(echo "$path_key" | sed 's/submodule\.\(.*\)\.path/\1/')
+    url=$(git config --file .gitmodules submodule."$name".url)
+
+    echo "初始化子模块: $name"
+    echo "  路径: $path"
+    echo "  URL : $url"
+
+    # 只需要 init，不要 add
+    git submodule init "$path"
 done
-git submodule update
+
+# 更新所有子模块
+git submodule update --recursive

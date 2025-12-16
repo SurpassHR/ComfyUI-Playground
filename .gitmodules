@@ -40,9 +40,9 @@
 [submodule "comfyui-videohelpersuite"]
 	path = custom_nodes/comfyui-videohelpersuite
 	url = https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
-[submodule "ComfyUI-WanVideoWrapper"]
-	path = custom_nodes/ComfyUI-WanVideoWrapper
-	url = https://github.com/kijai/ComfyUI-WanVideoWrapper.git
+# [submodule "ComfyUI-WanVideoWrapper"]
+# 	path = custom_nodes/ComfyUI-WanVideoWrapper
+# 	url = https://github.com/kijai/ComfyUI-WanVideoWrapper.git
 [submodule "ComfyUI_Comfyroll_CustomNodes"]
 	path = custom_nodes/ComfyUI_Comfyroll_CustomNodes
 	url = https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
