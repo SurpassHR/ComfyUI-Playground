@@ -24,7 +24,7 @@ if [ -z "$params" ]; then
         --async-offload \
         --cache-ram \
         --disable-xformers \
-        --output-directory F:\\GeneratedImages
+        --output-directory /media/hr/Data/GeneratedImages
 else
     TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" -B main.py \
         "$@" \
@@ -33,7 +33,7 @@ else
         --preview-method taesd \
         --async-offload \
         --cache-ram \
-        --output-directory F:\\GeneratedImages
+        --output-directory /media/hr/Data/GeneratedImages
 fi
 
 echo "Uploading workflows"
