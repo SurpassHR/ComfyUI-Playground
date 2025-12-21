@@ -19,7 +19,7 @@ jobs:
           git config user.email hu.rui0530@gmail.com
           git remote add upstream https://${{ secrets.ACTION_TOKEN }}@github.com/comfyanonymous/ComfyUI.git
           git fetch upstream
-          git merge upstream/master
+          git merge upstream/master -X theirs # 保留上游的修改
           git push origin master
 
       # - name: Push Changes
