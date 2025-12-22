@@ -7,11 +7,11 @@
 [submodule "ComfyUI-Crystools"]
 	path = custom_nodes/ComfyUI-Crystools
 	url = https://github.com/crystian/ComfyUI-Crystools.git
-[submodule "comfyui-easy-use"]
-	path = custom_nodes/comfyui-easy-use
+[submodule "ComfyUI-Easy-Use"]
+	path = custom_nodes/ComfyUI-Easy-Use
 	url = https://github.com/yolain/ComfyUI-Easy-Use.git
-[submodule "comfyui-frame-interpolation"]
-	path = custom_nodes/comfyui-frame-interpolation
+[submodule "ComfyUI-Frame-Interpolation"]
+	path = custom_nodes/ComfyUI-Frame-Interpolation
 	url = https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
 [submodule "ComfyUI-GGUF"]
 	path = custom_nodes/ComfyUI-GGUF
@@ -20,7 +20,7 @@
 	path = custom_nodes/comfyui-impact-pack
 	url = https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
 [submodule "comfyui-kjnodes"]
-	path = custom_nodes/comfyui-kjnodes
+	path = custom_nodes/ComfyUI-KJNodes
 	url = https://github.com/kijai/ComfyUI-KJNodes.git
 [submodule "ComfyUI-Manager"]
 	path = custom_nodes/ComfyUI-Manager
@@ -37,8 +37,8 @@
 [submodule "comfyui-various"]
 	path = custom_nodes/comfyui-various
 	url = https://github.com/jamesWalker55/comfyui-various.git
-[submodule "comfyui-videohelpersuite"]
-	path = custom_nodes/comfyui-videohelpersuite
+[submodule "ComfyUI-VideoHelperSuite"]
+	path = custom_nodes/ComfyUI-VideoHelperSuite
 	url = https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
 # [submodule "ComfyUI-WanVideoWrapper"]
 # 	path = custom_nodes/ComfyUI-WanVideoWrapper
@@ -52,8 +52,8 @@
 [submodule "ComfyUI_LayerStyle"]
 	path = custom_nodes/ComfyUI_LayerStyle
 	url = https://github.com/chflame163/ComfyUI_LayerStyle.git
-[submodule "comfyui_ultimatesdupscale"]
-	path = custom_nodes/comfyui_ultimatesdupscale
+[submodule "ComfyUI_UltimateSDUpscale"]
+	path = custom_nodes/ComfyUI_UltimateSDUpscale
 	url = https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 [submodule "RES4LYF"]
 	path = custom_nodes/RES4LYF
@@ -64,8 +64,8 @@
 [submodule "TT-tools"]
 	path = custom_nodes/TT-tools
 	url = https://github.com/liangtongt/TT-tools.git
-[submodule "was-ns"]
-	path = custom_nodes/was-ns
+[submodule "was-node-suite-comfyui"]
+	path = custom_nodes/was-node-suite-comfyui
 	url = https://github.com/ltdrdata/was-node-suite-comfyui.git
 [submodule "ComfyUI-Custom-Scripts"]
     path = custom_nodes/ComfyUI-Custom-Scripts
@@ -76,3 +76,6 @@
 [submodule "workflows"]
 	path = user/default/workflows
 	url = https://github.com/SurpassHR/ComfyUI-workflows.git
+[submodule "comfy_gallery"]
+	path = comfy_gallery
+	url = https://github.com/SurpassHR/GalleryFlow.git
