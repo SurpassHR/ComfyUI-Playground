@@ -273,7 +273,7 @@
     "VHS.LatentPreview": true,
     "RES4LYF.enableDebugLogs": true,
     "Comfy.Workflow.SortNodeIdOnSave": true,
-    "Comfy.Minimap.Visible": true,
+    "Comfy.Minimap.Visible": false,
     "Comfy.DisableFloatRounding": true,
     "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
     "Comfy.Sidebar.Style": "connected",
