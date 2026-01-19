@@ -286,5 +286,8 @@
     "Comfy.EnableTooltips": false,
     "Comfy.EnableWorkflowViewRestore": false,
     "Comfy.DevMode": true,
-    "Comfy.EditAttention.Delta": 0.1
+    "Comfy.EditAttention.Delta": 0.1,
+    "Use Everywhere.Options.logging": 3,
+    "Comfy.RightSidePanel.IsOpen": false,
+    "Comfy.Queue.History.Expanded": false
 }
