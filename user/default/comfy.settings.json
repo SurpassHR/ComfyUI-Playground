@@ -234,7 +234,7 @@
     "Comfy.InstalledVersion": "1.25.11",
     "Comfy.TutorialCompleted": true,
     "Comfy.Locale": "en",
-    "Comfy.Workflow.ShowMissingModelsWarning": false,
+    "Comfy.Workflow.ShowMissingModelsWarning": true,
     "Comfy.Minimap.NodeColors": true,
     "Comfy.Keybinding.NewBindings": [
         {
@@ -286,8 +286,12 @@
     "Comfy.EnableTooltips": false,
     "Comfy.EnableWorkflowViewRestore": false,
     "Comfy.DevMode": true,
-    "Comfy.EditAttention.Delta": 0.1,
+    "Comfy.EditAttention.Delta": 0.05,
     "Use Everywhere.Options.logging": 3,
     "Comfy.RightSidePanel.IsOpen": false,
-    "Comfy.Queue.History.Expanded": false
+    "Comfy.Queue.History.Expanded": false,
+    "Comfy.Templates.SortBy": "default",
+    "mtb.postshot.path": "",
+    "pysssss.AutoCompleter": true,
+    "Comfy.Workflow.ShowMissingNodesWarning": true
 }
