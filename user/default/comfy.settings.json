@@ -215,7 +215,7 @@
     "Comfy.Release.Version": "0.3.49",
     "Comfy.Release.Status": "what's new seen",
     "Comfy.Release.Timestamp": 1755069817972,
-    "Comfy.Node.Opacity": 0.9,
+    "Comfy.Node.Opacity": 0.6,
     "Comfy.TextareaWidget.FontSize": 11,
     "Comfy.Canvas.BackgroundImage": "",
     "Crystools.projectNameShow": true,
@@ -273,7 +273,7 @@
     "VHS.LatentPreview": true,
     "RES4LYF.enableDebugLogs": true,
     "Comfy.Workflow.SortNodeIdOnSave": true,
-    "Comfy.Minimap.Visible": false,
+    "Comfy.Minimap.Visible": true,
     "Comfy.DisableFloatRounding": true,
     "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
     "Comfy.Sidebar.Style": "connected",
@@ -293,5 +293,7 @@
     "Comfy.Templates.SortBy": "default",
     "mtb.postshot.path": "",
     "pysssss.AutoCompleter": true,
-    "Comfy.Workflow.ShowMissingNodesWarning": true
+    "Comfy.Workflow.ShowMissingNodesWarning": true,
+    "Comfy.NodeReplacement.Enabled": true,
+    "Comfy.Node.AlwaysShowAdvancedWidgets": true
 }
