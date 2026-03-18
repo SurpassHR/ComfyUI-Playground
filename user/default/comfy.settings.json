@@ -210,7 +210,7 @@
     "Comfy.Sidebar.UnifiedWidth": true,
     "Comfy.Sidebar.Size": "small",
     "Comfy.Sidebar.Location": "right",
-    "Comfy.ColorPalette": "obsidian_dark",
+    "Comfy.ColorPalette": "obsidian",
     "pysssss.SnapToGrid": true,
     "Comfy.Release.Version": "0.3.49",
     "Comfy.Release.Status": "what's new seen",
@@ -254,6 +254,24 @@
                 "alt": false,
                 "shift": true
             }
+        },
+        {
+            "commandId": "Comfy.Canvas.CopySelected",
+            "combo": {
+                "key": "C",
+                "ctrl": true,
+                "alt": false,
+                "shift": true
+            }
+        },
+        {
+            "commandId": "Comfy.Canvas.PasteFromClipboard",
+            "combo": {
+                "key": "V",
+                "ctrl": true,
+                "alt": false,
+                "shift": true
+            }
         }
     ],
     "Comfy.Keybinding.UnsetBindings": [
@@ -265,6 +283,36 @@
                 "alt": false,
                 "shift": false
             }
+        },
+        {
+            "commandId": "Comfy.Canvas.CopySelected",
+            "combo": {
+                "key": "c",
+                "ctrl": true,
+                "alt": false,
+                "shift": false
+            },
+            "targetElementId": "graph-canvas-container"
+        },
+        {
+            "commandId": "Comfy.Canvas.PasteFromClipboard",
+            "combo": {
+                "key": "v",
+                "ctrl": true,
+                "alt": false,
+                "shift": false
+            },
+            "targetElementId": "graph-canvas-container"
+        },
+        {
+            "commandId": "Comfy.Canvas.PasteFromClipboardWithConnect",
+            "combo": {
+                "key": "v",
+                "ctrl": true,
+                "alt": false,
+                "shift": true
+            },
+            "targetElementId": "graph-canvas-container"
         }
     ],
     "VHS.AdvancedPreviews": "Always",
@@ -273,7 +321,7 @@
     "VHS.LatentPreview": true,
     "RES4LYF.enableDebugLogs": true,
     "Comfy.Workflow.SortNodeIdOnSave": true,
-    "Comfy.Minimap.Visible": true,
+    "Comfy.Minimap.Visible": false,
     "Comfy.DisableFloatRounding": true,
     "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
     "Comfy.Sidebar.Style": "connected",
@@ -283,7 +331,7 @@
     "Comfy.Graph.CanvasInfo": false,
     "EasyUse.StylesSelector.DisplayType": "List",
     "Comfy.VueNodes.Enabled": false,
-    "Comfy.EnableTooltips": false,
+    "Comfy.EnableTooltips": true,
     "Comfy.EnableWorkflowViewRestore": false,
     "Comfy.DevMode": true,
     "Comfy.EditAttention.Delta": 0.05,
@@ -295,5 +343,17 @@
     "pysssss.AutoCompleter": true,
     "Comfy.Workflow.ShowMissingNodesWarning": true,
     "Comfy.NodeReplacement.Enabled": true,
-    "Comfy.Node.AlwaysShowAdvancedWidgets": true
+    "Comfy.Node.AlwaysShowAdvancedWidgets": true,
+    "Comfy.Execution.PreviewMethod": "taesd",
+    "Comfy.Graph.LiveSelection": true,
+    "Comfy.Queue.QPOV2": true,
+    "Comfy.WorkflowActions.SeenItems": [
+        "enter-app-mode",
+        "enter-builder-mode"
+    ],
+    "Comfy.Canvas.NavigationMode": "legacy",
+    "Comfy.Canvas.LeftMouseClickBehavior": "panning",
+    "Comfy.Canvas.MouseWheelScroll": "zoom",
+    "pysssss.MiddleClickAddDefaultNode": "[None]",
+    "LiteGraph.Node.DefaultPadding": true
 }
