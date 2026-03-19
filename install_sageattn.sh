@@ -1,27 +1,54 @@
-COMFYUI_ROOT="/root/autodl-tmp/ComfyUI"
+# --- 自动获取显卡架构 (Arch List) ---
+echo "正在检测 GPU 算力架构..."
 
-SUDO="sudo"
-# 检查当前是否是root用户，如果是root用户后续命令不需要添加sudo
-if [[ $EUID -ne 0 ]]; then
-    SUDO=""
+COMFYUI_ROOT=$(dirname "$(realpath "$0")")
+
+# 使用 Python 探测当前主显卡的算力版本
+# 结果会从 (8, 9) 转换为 "8.9"
+DETECTED_ARCH=$(python3 -c "
+import torch
+try:
+    if torch.cuda.is_available():
+        major, minor = torch.cuda.get_device_capability(0)
+        print(f'{major}.{minor}')
+    else:
+        print('NOT_FOUND')
+except Exception:
+    print('ERROR')
+")
+
+# 逻辑判断：如果自动探测失败，手动设置一个安全值或报错
+if [[ "$DETECTED_ARCH" == "NOT_FOUND" || "$DETECTED_ARCH" == "ERROR" ]]; then
+    echo "警告: 自动探测架构失败，将尝试从 nvidia-smi 匹配或使用默认值。"
+    # 备选方案：通过 nvidia-smi 的名字简单推断 (针对常见显卡)
+    GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader | head -n 1)
+    if [[ $GPU_NAME =~ "RTX 40" ]]; then DETECTED_ARCH="8.9"
+    elif [[ $GPU_NAME =~ "RTX 30" ]]; then DETECTED_ARCH="8.6"
+    elif [[ $GPU_NAME =~ "A100" ]]; then DETECTED_ARCH="8.0"
+    elif [[ $GPU_NAME =~ "H100" ]]; then DETECTED_ARCH="9.0"
+    else 
+        DETECTED_ARCH="8.0" # 最终保底方案：使用通用的 Ampere 架构
+        echo "无法确定具体型号，默认使用 8.0"
+    fi
 fi
 
-# 检查当前ubuntu版本，格式为例如2204
-UBUNTU_VERSION=$(lsb_release -rs | sed 's/\.//')
+echo ">> 最终选定的编译架构: TORCH_CUDA_ARCH_LIST=\"$DETECTED_ARCH\""
 
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu${UBUNTU_VERSION}/x86_64/cuda-ubuntu${UBUNTU_VERSION}.pin
-$SUDO mv cuda-ubuntu${UBUNTU_VERSION}.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda-repo-ubuntu${UBUNTU_VERSION}-12-8-local_12.8.0-570.86.10-1_amd64.deb
-$SUDO dpkg -i cuda-repo-ubuntu${UBUNTU_VERSION}-12-8-local_12.8.0-570.86.10-1_amd64.deb
-$SUDO cp /var/cuda-repo-ubuntu${UBUNTU_VERSION}-12-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
-$SUDO apt-get update
-$SUDO apt-get -y install cuda-toolkit-12-8
-rm -rf ./cuda-repo-ubuntu${UBUNTU_VERSION}-12-8-local_12.8.0-570.86.10-1_amd64.deb
-$SUDO apt-get clean
-$SUDO rm -rf /var/lib/apt/lists/*
-
+# --- 执行编译安装 ---
 cd ${COMFYUI_ROOT}
+[[ -d "SageAttention" ]] && rm -rf SageAttention
 git clone https://github.com/thu-ml/SageAttention.git
 cd SageAttention
-uv pip install . --no-build-isolation # 直接指定sm_xx然后运行，如：TORCH_CUDA_ARCH_LIST="8.9" uv pip install . --no-build-isolation
-cd .. && rm -rf ./SageAttention
+
+# 核心改进：组合环境变量进行一键安装
+# 1. 指定架构 (减少 70%+ 编译量)
+# 2. 限制任务数 (保护内存)
+# 3. 禁用构建隔离 (使用当前虚拟环境的依赖)
+export TORCH_CUDA_ARCH_LIST="$DETECTED_ARCH"
+export MAX_JOBS=4
+
+echo "正在开始编译安装 SageAttention (请观察进度)..."
+uv pip install . --no-build-isolation -vv
+
+cd ..
+rm -rf ./SageAttention

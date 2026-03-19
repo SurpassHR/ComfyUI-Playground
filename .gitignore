@@ -17,6 +17,8 @@ venv*/
 /user/**/*.log
 /user/**/cache
 /user/**/workflows
+/user/comfyui.db
+/user/comfyui.db.bkp
 /web/extensions/*
 !/web/extensions/logging.js.example
 !/web/extensions/core/
@@ -27,4 +29,4 @@ web_custom_versions/
 openapi.yaml
 filtered-openapi.yaml
 uv.lock
-comfy_gallery
+smart-comfyui-gallery
