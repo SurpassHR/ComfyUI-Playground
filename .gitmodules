@@ -76,6 +76,3 @@
 [submodule "workflows"]
 	path = user/default/workflows
 	url = https://github.com/SurpassHR/ComfyUI-workflows.git
-[submodule "comfy_gallery"]
-	path = comfy_gallery
-	url = https://github.com/SurpassHR/GalleryFlow.git
