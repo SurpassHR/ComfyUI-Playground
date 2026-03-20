@@ -30,3 +30,4 @@ openapi.yaml
 filtered-openapi.yaml
 uv.lock
 smart-comfyui-gallery
+prompts.db

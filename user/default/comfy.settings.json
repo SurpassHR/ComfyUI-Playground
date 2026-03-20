@@ -210,5 +210,6 @@
     "Comfy.Sidebar.UnifiedWidth": false,
     "pysssss.SnapToGrid": true,
     "Comfy.RightSidePanel.IsOpen": false,
-    "Comfy.Queue.History.Expanded": false
+    "Comfy.Queue.History.Expanded": false,
+    "Comfy.NodeSearchBoxImpl": "default"
 }
