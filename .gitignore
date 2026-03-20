@@ -18,6 +18,7 @@ venv*/
 /user/**/cache
 /user/**/workflows
 /user/comfyui.db
+/user/comfyui.db.lock
 /user/comfyui.db.bkp
 /web/extensions/*
 !/web/extensions/logging.js.example
