@@ -211,5 +211,14 @@
     "pysssss.SnapToGrid": true,
     "Comfy.RightSidePanel.IsOpen": false,
     "Comfy.Queue.History.Expanded": false,
-    "Comfy.NodeSearchBoxImpl": "default"
+    "Comfy.NodeSearchBoxImpl": "default",
+    "Comfy.ColorPalette": "obsidian_dark",
+    "Comfy.Execution.PreviewMethod": "taesd",
+    "EasyUse.ContextMenu.ModelsThumbnails": true,
+    "Comfy.InstalledVersion": "1.41.21",
+    "Comfy.Workflow.SortNodeIdOnSave": true,
+    "Comfy.WorkflowActions.SeenItems": [
+        "enter-app-mode",
+        "enter-builder-mode"
+    ]
 }

@@ -16,7 +16,7 @@ echo "Updating workflows"
 bash update_workflows.sh
 
 PYTHON="python"  # Linux/macOS uses .venv/bin/python instead of .venv/Scripts/python.exe
-export LD_LIBRARY_PATH=/home/hr/Projects/Codes/ComfyUI/.venv/lib/python3.12/site-packages/nvidia/cu13/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/hr/Projects/Codes/ComfyUI/.venv/lib/python3.12/site-packages/nvidia/cu13/lib:/home/hr/Projects/Codes/ComfyUI/.venv/lib/python3.12/site-packages/nvidia/cudnn/lib:$LD_LIBRARY_PATH
 if [ -z "$params" ]; then
     "$PYTHON" -B main.py \
         --port 55554 \
