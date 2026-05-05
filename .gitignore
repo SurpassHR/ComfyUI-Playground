@@ -29,5 +29,4 @@ web_custom_versions/
 .DS_Store
 filtered-openapi.yaml
 uv.lock
-smart-comfyui-gallery
-prompts.db
+.comfy_environment
