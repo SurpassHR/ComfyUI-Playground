@@ -1,3 +1,4 @@
+#!/bin/bash
 # --- 自动获取显卡架构 (Arch List) ---
 echo "正在检测 GPU 算力架构..."
 
@@ -26,7 +27,7 @@ if [[ "$DETECTED_ARCH" == "NOT_FOUND" || "$DETECTED_ARCH" == "ERROR" ]]; then
     elif [[ $GPU_NAME =~ "RTX 30" ]]; then DETECTED_ARCH="8.6"
     elif [[ $GPU_NAME =~ "A100" ]]; then DETECTED_ARCH="8.0"
     elif [[ $GPU_NAME =~ "H100" ]]; then DETECTED_ARCH="9.0"
-    else 
+    else
         DETECTED_ARCH="8.0" # 最终保底方案：使用通用的 Ampere 架构
         echo "无法确定具体型号，默认使用 8.0"
     fi

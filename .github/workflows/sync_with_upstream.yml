@@ -19,8 +19,10 @@ jobs:
           git config user.email hu.rui0530@gmail.com
           git remote add upstream https://${{ secrets.ACTION_TOKEN }}@github.com/comfyanonymous/ComfyUI.git
           git fetch upstream
-          git merge upstream/master -X theirs # 保留上游的修改
+          git merge upstream/master -X theirs --no-edit || {
+            echo "自动合并不完全成功，将所有冲突文件强制使用 upstream 版本..."
+            git checkout --theirs .
+            git add -A
+            git commit -m "Merge upstream/master (conflicts auto-resolved: upstream wins)" || echo "无需额外提交"
+          }
           git push origin master
-
-      # - name: Push Changes
-      #   run: git push https://github.com/${{ github.repository }}.git HEAD:master

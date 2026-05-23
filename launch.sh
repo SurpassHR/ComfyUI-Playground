@@ -21,9 +21,11 @@ if [ -z "$params" ]; then
     "$PYTHON" -B main.py \
         --port 55554 \
         --cuda-malloc \
-        --preview-method taesd \
-        --cache-ram \
+        --preview-method auto \
+        --cache-ram 12 \
         --disable-xformers \
+        --disable-smart-memory \
+        --reserve-vram 1.5 \
         --output-directory /media/hr/Data/GeneratedImages
 else
     TF_ENABLE_ONEDNN_OPTS=0 "$PYTHON" -B main.py \
