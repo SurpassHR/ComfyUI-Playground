@@ -64,7 +64,8 @@
                     "error-text": "#ff4444",
                     "border-color": "#29292c",
                     "tr-even-bg-color": "rgba(28,28,28,.9)",
-                    "tr-odd-bg-color": "rgba(19,19,19,.9)"
+                    "tr-odd-bg-color": "rgba(19,19,19,.9)",
+                    "comfy-menu-secondary-bg": "rgba(24,24,24,.9)"
                 }
             }
         },
@@ -205,21 +206,88 @@
             }
         }
     },
-    "Comfy.Sidebar.Location": "right",
+    "Comfy.Validation.Workflows": false,
+    "Comfy.Sidebar.UnifiedWidth": true,
     "Comfy.Sidebar.Size": "small",
-    "Comfy.Sidebar.UnifiedWidth": false,
-    "pysssss.SnapToGrid": true,
-    "Comfy.RightSidePanel.IsOpen": false,
-    "Comfy.Queue.History.Expanded": false,
-    "Comfy.NodeSearchBoxImpl": "default",
+    "Comfy.Sidebar.Location": "right",
     "Comfy.ColorPalette": "obsidian_dark",
-    "Comfy.Execution.PreviewMethod": "taesd",
-    "EasyUse.ContextMenu.ModelsThumbnails": true,
-    "Comfy.InstalledVersion": "1.41.21",
-    "Comfy.Workflow.SortNodeIdOnSave": true,
-    "Comfy.WorkflowActions.SeenItems": [
-        "enter-app-mode",
-        "enter-builder-mode"
+    "pysssss.SnapToGrid": true,
+    "Comfy.Release.Version": "0.3.49",
+    "Comfy.Release.Status": "what's new seen",
+    "Comfy.Release.Timestamp": 1755069817972,
+    "Comfy.Node.Opacity": 0.9,
+    "Comfy.TextareaWidget.FontSize": 11,
+    "Comfy.Canvas.BackgroundImage": "",
+    "Crystools.projectNameShow": true,
+    "Crystools.newSave": true,
+    "Crystools.ShowGpuUsageZero": true,
+    "Crystools.ShowHdd": true,
+    "Crystools.WhichHdd": "F:\\",
+    "Crystools.ShowCpu": true,
+    "Crystools.MonitorWidth": 65,
+    "Crystools.RefreshRate": 1,
+    "LiteGraph.ContextMenu.Scaling": true,
+    "Comfy.LinkRenderMode": 2,
+    "Comfy.Graph.LinkMarkers": 2,
+    "Comfy.DOMClippingEnabled": false,
+    "Comfy.Workflow.AutoSave": "off",
+    "Comfy.InstalledVersion": "1.25.11",
+    "Comfy.TutorialCompleted": true,
+    "Comfy.Locale": "en",
+    "Comfy.Workflow.ShowMissingModelsWarning": false,
+    "Comfy.Minimap.NodeColors": true,
+    "Comfy.Keybinding.NewBindings": [
+        {
+            "commandId": "Comfy.RefreshNodeDefinitions",
+            "combo": {
+                "key": "r",
+                "ctrl": false,
+                "alt": true,
+                "shift": false
+            }
+        },
+        {
+            "commandId": "Comfy.SaveWorkflowAs",
+            "combo": {
+                "key": "S",
+                "ctrl": true,
+                "alt": false,
+                "shift": true
+            }
+        }
     ],
-    "pysssss.UseNumberInputPrompt": true
+    "Comfy.Keybinding.UnsetBindings": [
+        {
+            "commandId": "Comfy.RefreshNodeDefinitions",
+            "combo": {
+                "key": "r",
+                "ctrl": false,
+                "alt": false,
+                "shift": false
+            }
+        }
+    ],
+    "VHS.AdvancedPreviews": "Always",
+    "EasyUse.ContextMenu.SubDirectories": false,
+    "Comfy.UseNewMenu": "Top",
+    "VHS.LatentPreview": true,
+    "RES4LYF.enableDebugLogs": true,
+    "Comfy.Workflow.SortNodeIdOnSave": true,
+    "Comfy.Minimap.Visible": false,
+    "Comfy.DisableFloatRounding": true,
+    "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
+    "Comfy.Sidebar.Style": "connected",
+    "LiteGraph.Canvas.MaximumFps": 120,
+    "Comfy.Workflow.WarnBlueprintOverwrite": false,
+    "Comfy.VueNodes.AutoScaleLayout": false,
+    "Comfy.Graph.CanvasInfo": false,
+    "EasyUse.StylesSelector.DisplayType": "List",
+    "Comfy.VueNodes.Enabled": false,
+    "Comfy.EnableTooltips": false,
+    "Comfy.EnableWorkflowViewRestore": false,
+    "Comfy.DevMode": true,
+    "Comfy.EditAttention.Delta": 0.1,
+    "Use Everywhere.Options.logging": 3,
+    "Comfy.RightSidePanel.IsOpen": false,
+    "Comfy.Queue.History.Expanded": false
 }
