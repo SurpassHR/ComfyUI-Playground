@@ -210,7 +210,7 @@
     "Comfy.Sidebar.UnifiedWidth": true,
     "Comfy.Sidebar.Size": "small",
     "Comfy.Sidebar.Location": "right",
-    "Comfy.ColorPalette": "obsidian_dark",
+    "Comfy.ColorPalette": "nord",
     "pysssss.SnapToGrid": true,
     "Comfy.Release.Version": "0.3.49",
     "Comfy.Release.Status": "what's new seen",
@@ -222,7 +222,7 @@
     "Crystools.newSave": true,
     "Crystools.ShowGpuUsageZero": true,
     "Crystools.ShowHdd": true,
-    "Crystools.WhichHdd": "F:\\",
+    "Crystools.WhichHdd": "/media/hr/Data",
     "Crystools.ShowCpu": true,
     "Crystools.MonitorWidth": 65,
     "Crystools.RefreshRate": 1,
@@ -238,15 +238,6 @@
     "Comfy.Minimap.NodeColors": true,
     "Comfy.Keybinding.NewBindings": [
         {
-            "commandId": "Comfy.RefreshNodeDefinitions",
-            "combo": {
-                "key": "r",
-                "ctrl": false,
-                "alt": true,
-                "shift": false
-            }
-        },
-        {
             "commandId": "Comfy.SaveWorkflowAs",
             "combo": {
                 "key": "S",
@@ -258,13 +249,14 @@
     ],
     "Comfy.Keybinding.UnsetBindings": [
         {
-            "commandId": "Comfy.RefreshNodeDefinitions",
+            "commandId": "KJNodes.AddSetNodeToSelected",
             "combo": {
-                "key": "r",
-                "ctrl": false,
+                "key": "s",
+                "ctrl": true,
                 "alt": false,
-                "shift": false
-            }
+                "shift": true
+            },
+            "targetElementId": "graph-canvas"
         }
     ],
     "VHS.AdvancedPreviews": "Always",
@@ -289,5 +281,16 @@
     "Comfy.EditAttention.Delta": 0.1,
     "Use Everywhere.Options.logging": 3,
     "Comfy.RightSidePanel.IsOpen": false,
-    "Comfy.Queue.History.Expanded": false
+    "Comfy.Queue.History.Expanded": false,
+    "KayTool.EnableGuLuLu": false,
+    "KayTool.EnableResourceMonitor": false,
+    "KayTool.ResourceMonitorEdgeFade": false,
+    "KJNodes.canvasBg.pattern": "default",
+    "KJNodes.canvasBg.scale": 32,
+    "KJNodes.canvasBg.thickness": 1,
+    "KJNodes.perf.disableShadows": true,
+    "KJNodes.perf.disableRoundedCorners": true,
+    "KJNodes.perf.throttleRenderInfo": true,
+    "KJNodes.perf.disableConnectionBorders": true,
+    "KJNodes.perf.singleCanvasPan": true
 }
