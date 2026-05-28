@@ -265,7 +265,7 @@
     "VHS.LatentPreview": true,
     "RES4LYF.enableDebugLogs": true,
     "Comfy.Workflow.SortNodeIdOnSave": true,
-    "Comfy.Minimap.Visible": false,
+    "Comfy.Minimap.Visible": true,
     "Comfy.DisableFloatRounding": true,
     "Comfy.NodeBadge.NodeIdBadgeMode": "Show all",
     "Comfy.Sidebar.Style": "connected",
@@ -291,6 +291,6 @@
     "KJNodes.perf.disableShadows": true,
     "KJNodes.perf.disableRoundedCorners": true,
     "KJNodes.perf.throttleRenderInfo": true,
-    "KJNodes.perf.disableConnectionBorders": true,
-    "KJNodes.perf.singleCanvasPan": true
+    "KJNodes.perf.disableConnectionBorders": false,
+    "KJNodes.perf.singleCanvasPan": false
 }
