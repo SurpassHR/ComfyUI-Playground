@@ -9,3 +9,5 @@ else
     uv pip install flash-attn --find-links https://github.com/Dao-AILab/flash-attention/releases/latest \
                              --find-links https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/latest
 fi
+
+# MAX_JOBS=4 NVCC_APPEND_FLAGS="-maxrregcount=80 --threads 2" TORCH_CUDA_ARCH_LIST="8.9" uv pip install flash-attn --no-build-isolation
