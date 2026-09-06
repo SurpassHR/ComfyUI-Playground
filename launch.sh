@@ -25,6 +25,7 @@ if [ -z "$params" ]; then
         --preview-method auto \
         --cache-ram 40 \
         --disable-xformers \
+        --disable-pinned-memory \
         --output-directory /media/hr/Data/GeneratedImages \
         --input-directory /media/hr/Data/InputImages
 else
