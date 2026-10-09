@@ -5,6 +5,7 @@ __pycache__/
 !/input/example.png
 /models/
 /temp/
+/offline_deps/
 /custom_nodes/*
 !custom_nodes/example_node.py.example
 extra_model_paths.yaml
@@ -24,7 +25,9 @@ venv*/
 /user/comfyui.db.bkp
 /user/PromptChain/thumbs/
 /user/PromptChain/browse_thumbs/
+/user/PromptChain/tags/
 /user/PromptChain/config.json
+/user/PromptChain/sha256_cache.json
 /user/default/pixaroma_workflows_*.json
 /web/extensions/*
 !/web/extensions/logging.js.example
@@ -33,6 +36,7 @@ venv*/
 *.log
 nohup.out
 web_custom_versions/
+/vae_approx/
 .DS_Store
 filtered-openapi.yaml
 uv.lock
