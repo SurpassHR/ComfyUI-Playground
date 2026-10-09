@@ -7,15 +7,11 @@ if [ -z "$project_root" ]; then
     exit 1
 fi
 
-# 2. 获取 Submodule 路径
-# 使用 git config 解析 .gitmodules 文件
-# --get-regexp path 查找所有 submodule 的 path 配置
-# grep "workflows" 筛选包含 workflows 的行
-# awk '{print $2}' 提取路径部分
-submodule_path=$(git config --file "$project_root/.gitmodules" --get-regexp path | grep "workflows" | awk '{print $2}' | head -n 1)
+# 2. workflows 目录固定在这里（原先从 .gitmodules 解析）
+submodule_path="user/default/workflows"
 
-if [ -z "$submodule_path" ]; then
-    echo "Error: Could not find a submodule matching 'workflows'."
+if [ ! -d "$project_root/$submodule_path" ]; then
+    echo "Error: workflows directory not found: $submodule_path"
     exit 1
 fi
 
