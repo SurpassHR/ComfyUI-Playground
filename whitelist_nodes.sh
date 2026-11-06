@@ -1,0 +1,46 @@
+# 由 whitelist_from_workflow.py 生成，供 launch.sh source
+# 重新生成：python whitelist_from_workflow.py <工作流...> --write whitelist_nodes.sh
+WHITELIST_NODES=(
+    CRT-Nodes
+    ComfyUI-CacheDiT
+    ComfyUI-ConditioningKrea2Rebalance
+    ComfyUI-DyPE
+    ComfyUI-Easy-Use
+    ComfyUI-Fantastic-MiniMaxH3-PromptBuilder
+    ComfyUI-H3-Prompt-IDE
+    ComfyUI-KJNodes
+    ComfyUI-Krea2-Ostris-Edit
+    ComfyUI-MiniMax-H3-Long-Video
+    ComfyUI-MiniMaxH3Mod
+    ComfyUI-MultiGPU
+    ComfyUI-Pixaroma
+    ComfyUI-PlagueKind-Nodes
+    ComfyUI-Spectrum-MiniMax-H3
+    ComfyUI-VFI
+    ComfyUI-ZImagePowerNodes
+    ComfyUI-krea2-negpip
+    ComfyUI_Mira
+    ComfyUI_UltimateSDUpscale
+    ComfyUI_essentials
+    Comfyui_Minimax_h3_latent_Upscaler
+    Comfyui_PDuse
+    Comfyui_TTP_Toolset
+    ControlAltAI-Nodes
+    Goohaitools-comfyui
+    Nvidia_RTX_Nodes_ComfyUI
+    cg-use-everywhere
+    comfyui-custom-scripts
+    comfyui-impact-pack
+    comfyui-impact-subpack
+    comfyui-krea2-conditioning
+    comfyui-krea2edit
+    comfyui-logicutils
+    comfyui-videohelpersuite
+    comfyui-vrgamedevgirl
+    comfyui_tinyterranodes
+    derfuu_comfyui_moddednodes
+    masquerade-nodes-comfyui
+    rgthree-comfy
+    ComfyUI-SeedVR2_VideoUpscaler
+    was-ns
+)
