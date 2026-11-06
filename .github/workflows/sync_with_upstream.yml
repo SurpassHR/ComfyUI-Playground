@@ -1,0 +1,29 @@
+name: Sync With Upstream
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+concurrency:
+  group: sync-with-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - name: Sync upstream changes
+        run: |
+          set -euo pipefail
+          git clone https://${{ secrets.ACTION_TOKEN }}@github.com/${{ github.repository }}.git tmp
+          cd tmp
+          git checkout master
+          git config user.name SurpassHR
+          git config user.email hu.rui0530@gmail.com
+          git remote add upstream https://${{ secrets.ACTION_TOKEN }}@github.com/comfyanonymous/ComfyUI.git
+          git fetch upstream
+          git rebase upstream/master
+          git push --force-with-lease origin master
